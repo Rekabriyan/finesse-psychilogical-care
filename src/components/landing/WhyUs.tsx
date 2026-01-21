@@ -1,0 +1,148 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { 
+  Shield, 
+  Heart, 
+  GraduationCap, 
+  Users, 
+  Clock, 
+  Lock 
+} from "lucide-react";
+
+const reasons = [
+  {
+    icon: GraduationCap,
+    title: "Profesional Bersertifikat",
+    description: "Tim psikolog kami tersertifikasi dan berpengalaman dalam berbagai bidang psikologi klinis dan terapan.",
+  },
+  {
+    icon: Heart,
+    title: "Pendekatan Holistik",
+    description: "Kami memandang setiap individu secara utuh — pikiran, perasaan, dan perilaku sebagai satu kesatuan.",
+  },
+  {
+    icon: Shield,
+    title: "Berbasis Riset",
+    description: "Setiap intervensi dan asesmen yang kami lakukan berdasarkan bukti ilmiah dan standar profesional.",
+  },
+  {
+    icon: Lock,
+    title: "Kerahasiaan Terjamin",
+    description: "Privasi dan kerahasiaan klien adalah prioritas utama kami sesuai dengan kode etik profesi.",
+  },
+  {
+    icon: Users,
+    title: "Layanan Inklusif",
+    description: "Kami melayani semua kalangan tanpa diskriminasi, dengan pendekatan yang sensitif terhadap keberagaman.",
+  },
+  {
+    icon: Clock,
+    title: "Fleksibel & Accessible",
+    description: "Tersedia berbagai pilihan jadwal dan format konsultasi untuk kenyamanan Anda.",
+  },
+];
+
+const WhyUs = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  return (
+    <section id="mengapa" className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-primary/5 rounded-bl-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-accent/5 rounded-tr-[100px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10" ref={ref}>
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
+          {/* Section Header */}
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              Mengapa Finesse
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+              Keunggulan Kami
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Finesse berkomitmen untuk memberikan layanan psikologi berkualitas
+              tinggi dengan standar etika dan profesionalisme tertinggi.
+            </p>
+          </motion.div>
+
+          {/* Reasons Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group"
+              >
+                <div className="bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg h-full">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <reason.icon 
+                      className="text-primary group-hover:text-primary-foreground transition-colors" 
+                      size={28} 
+                    />
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {reason.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Trust Badge */}
+          <motion.div 
+            variants={itemVariants}
+            className="mt-16 bg-primary text-primary-foreground rounded-3xl p-8 lg:p-12 text-center"
+          >
+            <h3 className="font-heading text-2xl lg:text-3xl font-bold mb-4">
+              Dipercaya oleh Berbagai Kalangan
+            </h3>
+            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+              Dari individu hingga perusahaan, kami telah membantu berbagai klien
+              dalam perjalanan mereka menuju kesejahteraan psikologis.
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
+              <div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold">500+</div>
+                <div className="text-primary-foreground/70 text-sm mt-1">Klien Individual</div>
+              </div>
+              <div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold">50+</div>
+                <div className="text-primary-foreground/70 text-sm mt-1">Perusahaan</div>
+              </div>
+              <div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold">20+</div>
+                <div className="text-primary-foreground/70 text-sm mt-1">Komunitas</div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default WhyUs;
