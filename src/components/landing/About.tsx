@@ -34,10 +34,10 @@ const About = () => {
         >
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+            <h1 className="text-accent font-medium text-sm uppercase tracking-wider">
               Tentang Kami
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            </h1>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
               Mengenal Finesse
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
@@ -55,7 +55,7 @@ const About = () => {
                 <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
                   <Heart className="text-primary-foreground" size={28} />
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-6 mt-6">
+                <h3 className="text-2xl font-bold text-foreground mb-6 mt-6">
                   Filosofi Kami
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
