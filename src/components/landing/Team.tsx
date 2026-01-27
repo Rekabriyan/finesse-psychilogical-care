@@ -75,7 +75,7 @@ const Team = () => {
             <span className="text-accent font-medium text-sm uppercase tracking-wider">
               Tim Kami
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
               Psikolog Profesional Kami
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
