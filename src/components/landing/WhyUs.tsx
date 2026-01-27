@@ -126,11 +126,11 @@ const WhyUs = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
               <div>
-                <div className="font-heading text-4xl lg:text-5xl font-bold">500+</div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold">300+</div>
                 <div className="text-primary-foreground/70 text-sm mt-1">Klien Individual</div>
               </div>
               <div>
-                <div className="font-heading text-4xl lg:text-5xl font-bold">50+</div>
+                <div className="font-heading text-4xl lg:text-5xl font-bold">20+</div>
                 <div className="text-primary-foreground/70 text-sm mt-1">Perusahaan</div>
               </div>
               <div>
