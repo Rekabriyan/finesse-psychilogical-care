@@ -44,7 +44,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
             >
               Menemani Perjalanan
               <span className="text-primary block mt-2">Kesehatan Mental</span>
