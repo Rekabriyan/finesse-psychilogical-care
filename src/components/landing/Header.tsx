@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPrimary from "@/assets/logo-primary.png";
+import logoPrimary from "@/assets/logo-finesse.svg";
 
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 
 const navLinks = [
-  { label: "Tentang Kami", href: "#tentang" },
   { label: "Layanan", href: "#layanan" },
   { label: "Mengapa Kami", href: "#mengapa" },
   { label: "Tim Kami", href: "#tim" },
