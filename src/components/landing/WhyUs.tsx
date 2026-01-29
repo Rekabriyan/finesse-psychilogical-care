@@ -112,33 +112,7 @@ const WhyUs = () => {
             ))}
           </div>
 
-          {/* Trust Badge */}
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 bg-primary text-primary-foreground rounded-3xl p-8 lg:p-12 text-center"
-          >
-            <h3 className="font-heading text-2xl lg:text-3xl font-bold mb-4">
-              Dipercaya oleh Berbagai Kalangan
-            </h3>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Dari individu hingga perusahaan, kami telah membantu berbagai klien
-              dalam perjalanan mereka menuju kesejahteraan psikologis.
-            </p>
-            <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
-              <div>
-                <div className="font-heading text-4xl lg:text-5xl font-bold">300+</div>
-                <div className="text-primary-foreground/70 text-sm mt-1">Klien Individual</div>
-              </div>
-              <div>
-                <div className="font-heading text-4xl lg:text-5xl font-bold">20+</div>
-                <div className="text-primary-foreground/70 text-sm mt-1">Perusahaan</div>
-              </div>
-              <div>
-                <div className="font-heading text-4xl lg:text-5xl font-bold">20+</div>
-                <div className="text-primary-foreground/70 text-sm mt-1">Komunitas</div>
-              </div>
-            </div>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>
