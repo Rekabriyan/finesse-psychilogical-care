@@ -27,24 +27,6 @@ const team = [
   },
 ];
 
-const credentials = [
-  {
-    icon: Award,
-    title: "Sertifikasi Profesional",
-    description: "Seluruh tim memiliki lisensi resmi dari Himpunan Psikologi Indonesia",
-  },
-  {
-    icon: BookOpen,
-    title: "Pengembangan Berkelanjutan",
-    description: "Rutin mengikuti pelatihan dan update metode terapi terbaru",
-  },
-  {
-    icon: Heart,
-    title: "Kode Etik",
-    description: "Berpegang teguh pada kode etik profesi psikolog",
-  },
-];
-
 const Team = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -121,31 +103,6 @@ const Team = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Credentials */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-secondary/30 rounded-3xl p-8 lg:p-12"
-          >
-            <h3 className="font-heading text-2xl font-bold text-center text-foreground mb-10">
-              Kredensial Tim Kami
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              {credentials.map((cred, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <cred.icon className="text-primary" size={28} />
-                  </div>
-                  <h4 className="font-heading text-lg font-bold text-foreground mb-2">
-                    {cred.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    {cred.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
