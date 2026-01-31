@@ -4,6 +4,7 @@ import About from "@/components/landing/About";
 import Services from "@/components/landing/Services";
 import WhyUs from "@/components/landing/WhyUs";
 import Team from "@/components/landing/Team";
+import BannerEvents from "@/components/landing/Event";
 import Testimonials from "@/components/landing/Testimonials";
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
@@ -18,6 +19,7 @@ const Index = () => {
         <Services />
         <WhyUs />
         <Team />
+        <BannerEvents />
         <Testimonials />
         <Contact />
       </main>
