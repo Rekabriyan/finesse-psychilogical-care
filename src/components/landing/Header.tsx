@@ -7,9 +7,12 @@ import logoPrimary from "@/assets/logo-finesse.svg";
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 
 const navLinks = [
+  { label: "Mengapa Kami", href: "#mengapakami" },
   { label: "Layanan", href: "#layanan" },
-  { label: "Mengapa Kami", href: "#mengapa" },
+  { label: "Keunggulan", href: "#mengapa" },
   { label: "Tim Kami", href: "#tim" },
+  { label: "Testimoni", href: "#testimoni" },
+  { label: "Event", href: "#event" },
   { label: "Kontak", href: "#kontak" },
 ];
 
