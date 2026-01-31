@@ -1,108 +1,210 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Award, BookOpen, Heart } from "lucide-react";
+import { useRef, useState } from "react";
 
-const team = [
+const categories = [
   {
-    name: "Psikolog Profesional",
-    role: "Founder & Lead Psychologist",
-    specialization: "Psikologi Klinis",
-    description: "Berpengalaman dalam konseling individu, keluarga, dan trauma dengan pendekatan integratif.",
-    image: null, // Placeholder for team photo
+    name: "Psikolog Dewasa",
+    description: "Memahami dan menangani masalah kesehatan mental individu dewasa melalui pemeriksaan psikologis, konseling, dan terapi.",
   },
   {
-    name: "Konselor Profesional",
-    role: "Senior Counselor",
-    specialization: "Kesehatan Mental",
-    description: "Spesialisasi dalam penanganan kecemasan, depresi, dan pengembangan personal.",
-    image: null,
+    name: "Psikolog Anak & Pendidikan",
+    description: "Membantu memahami dan menangani masalah mental, emosional, perilaku, dan tumbuh kembang serta potensi anak, memahami cara belajar, mengatasi kesulitan dalam belajar, dan juga kebutuhan dan kesiapan belajar dengan optimal.",
   },
   {
-    name: "Assessor Profesional",
-    role: "Assessment Specialist",
-    specialization: "Asesmen Psikologi",
-    description: "Ahli dalam asesmen kepribadian, minat bakat, dan tumbuh kembang anak.",
-    image: null,
+    name: "Psikolog Industri & Organisasi",
+    description: "Membantu perusahaan dalam memilih, mengembangkan dan menjaga kinerja karyawan agar lebih sehat dan produktif, dan membantu individu dalam ruang lingkup organisasi agar lebih sesuai dengan kompetensi dan potensi yang dimiliki.",
+  },
+];
+
+const teamData = [
+  {
+    name: "Mindy Maghfira, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/mindy.svg",
+  },
+  {
+    name: "Rifa Viscarini, M.Psi., Psikolog.",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/rifa.svg",
+  },
+  {
+    name: "Dwi Ayu Elita Kartilia, M.Psi , Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/dwi-ayu.svg",
+  },
+  {
+    name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/astrid-nur.svg",
+  },
+  {
+    name: "Diah Ayu Permatasari, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/diah-ayu.svg",
+  },
+  {
+    name: "Astri Firdasannah, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/astri-firdasannah.svg",
+  },
+  {
+    name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/tekstidinegari-thaufik.svg",
+  },
+  {
+    name: "Norhafizha Rinanda, S.Psi., M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa & Anak",
+    category: ["Psikolog Dewasa", "Psikolog Anak & Pendidikan"],
+    image: "/src/assets/psikolog/norhafizha-rinanda.svg",
+  },
+  {
+    name: "Gitarani Sofia, M.Psi., Psikolog.",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: "/src/assets/psikolog/gitarani-sofia.svg",
+  },
+  {
+    name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog.",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: "/src/assets/psikolog/rahmatika-septina.svg",
+  },
+  {
+    name: "Amanda Putri Yuliardi, M. Psi., Psikolog",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: "/src/assets/psikolog/amanda-putri-yuliardi.svg",
+  },
+  {
+    name: "Tri Ayu Arimbi., M. Psi., Psikolog.",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: "/src/assets/psikolog/tri-ayu-arimbi.svg",
   },
 ];
 
 const Team = () => {
+  const [activeTab, setActiveTab] = useState("Psikolog Dewasa");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // 1. Mencari detail kategori yang aktif untuk menampilkan deskripsi
+  const activeCategoryDetail = categories.find((cat) => cat.name === activeTab);
+
+  // 2. Filter tim berdasarkan category (array)
+  const filteredTeam = teamData.filter((member) =>
+    member.category.includes(activeTab)
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <section id="tim" className="py-20 lg:py-32 bg-card relative overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8" ref={ref}>
+    <section id="tim" className="py-20 bg-[#fdfcf9]" ref={ref}>
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <span className="text-xs uppercase tracking-[0.2em] text-gray-500 font-medium">
+            Tim Kami
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a47] mt-2 mb-4">
+            Tim Profesional Kami
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Bertemu dengan para psikolog bersertifikat kami yang berdedikasi
+            untuk menemani perjalanan kesejahteraan Anda.
+          </p>
+        </div>
+
+        {/* Tab Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {categories.map((cat) => (
+            <button
+              key={cat.name}
+              onClick={() => setActiveTab(cat.name)}
+              className={`px-6 py-2 rounded-full border text-sm transition-all duration-300 ${
+                activeTab === cat.name
+                  ? "bg-[#4a707a] text-white border-[#4a707a] shadow-md"
+                  : "bg-white text-gray-400 border-gray-200 hover:border-[#4a707a]/50"
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Category Title & Dynamic Description */}
+        <motion.div 
+          key={`header-${activeTab}`} // Key agar deskripsi beranimasi saat ganti tab
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-10"
+        >
+          <h3 className="text-2xl font-bold text-[#1e3a47] mb-2">
+            {activeCategoryDetail?.name}
+          </h3>
+          <p className="text-gray-400 text-sm mb-4 max-w-4xl leading-relaxed">
+            {activeCategoryDetail?.description}
+          </p>
+          <div className="flex items-center gap-4">
+            <span className="text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">
+              Daftar Psikolog
+            </span>
+            <div className="h-[1px] w-full bg-gray-200"></div>
+          </div>
+        </motion.div>
+
+        {/* Team Grid */}
         <motion.div
+          key={activeTab}
+          variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6"
         >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
-              Tim Kami
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-              Psikolog Profesional Kami
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Tim kami terdiri dari psikolog dan konselor bersertifikat yang siap
-              membantu Anda dengan empati dan profesionalisme.
-            </p>
-          </motion.div>
+          {filteredTeam.map((member, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+            >
+              {/* Photo Area */}
+              <div className="aspect-[5/4] bg-gradient-to-b from-orange-50 to-white relative flex items-end justify-center overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top filter contrast-[1.02]"
+                />
+              </div>
 
-          {/* Team Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="group"
-              >
-                <div className="bg-background rounded-3xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
-                  {/* Photo placeholder */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-primary/30 flex items-center justify-center">
-                      <span className="font-heading text-3xl font-bold text-primary">
-                        {member.name.split(" ").map(n => n[0]).join("")}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Info */}
-                  <div className="p-6">
-                    <div className="inline-block bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-medium mb-3">
-                      {member.specialization}
-                    </div>
-                    <h3 className="font-heading text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                      {member.name}
-                    </h3>
-                    <p className="text-accent font-medium text-sm mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              {/* Info Area */}
+              <div className="p-5">
+                <h4 className="font-heading text-[16px] font-bold text-[#1e3a47] leading-snug mb-2 min-h-[44px]">
+                  {member.name}
+                </h4>
+                <p className="text-xs text-gray-400">{member.role}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
