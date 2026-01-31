@@ -61,7 +61,7 @@ const WhyUs = () => {
   };
 
   return (
-    <section id="mengapa" className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+    <section id="mengapakami" className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-primary/5 rounded-bl-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-accent/5 rounded-tr-[100px] pointer-events-none" />
