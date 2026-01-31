@@ -1,7 +1,4 @@
 import { Heart, Instagram, Mail, Phone } from "lucide-react";
-import logoWhite from "@/assets/logo-white.png";
-
-const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 
 const footerLinks = {
   layanan: [
@@ -11,9 +8,13 @@ const footerLinks = {
     { label: "Persepsi Perempuan", href: "#layanan" },
   ],
   tentang: [
-    { label: "Tentang Kami", href: "#tentang" },
+    { label: "Mengapa Kami", href: "#mengapakami" },
+    { label: "Layanan", href: "#layanan" },
+    { label: "Keunggulan", href: "#keunggulan" },
     { label: "Tim Kami", href: "#tim" },
-    { label: "Mengapa Finesse", href: "#mengapa" },
+    { label: "Testimoni", href: "#testimoni" },
+    { label: "Event", href: "#event" },
+
   ],
   kontak: [
     { label: "Jl. Bengawan No. 45, Cihapit - Bandung", href: "#" },
@@ -31,9 +32,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src={logoWhite}
+              src={"src/assets/logo-finesse-putih.svg"}
               alt="Finesse Psychological Care"
-              className="h-12 w-auto mb-6"
+              className="h-12 w-auto mb-2"
             />
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               Finesse Psychological Care adalah mitra terpercaya Anda dalam
@@ -97,16 +98,6 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors"
-                >
-                  Daftar Konsultasi
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -135,9 +126,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
               © {new Date().getFullYear()} Finesse Psychological Care. All rights reserved.
-            </p>
-            <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
-              Made with <Heart size={14} className="text-red-400" /> in Bandung
             </p>
           </div>
         </div>
