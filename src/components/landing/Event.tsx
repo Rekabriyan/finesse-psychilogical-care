@@ -14,7 +14,7 @@ const EventsBanner = () => {
   };
 
   return (
-    <section className="py-12 px-4 md:px-8 lg:px-16">
+    <section id="event" className="py-24 px-4 md:px-8 lg:px-16">
       <div 
         ref={ref}
         className="max-w-none mx-auto relative overflow-hidden rounded-[2rem] min-h-[400px] flex items-center bg-[#f8fafc]"
