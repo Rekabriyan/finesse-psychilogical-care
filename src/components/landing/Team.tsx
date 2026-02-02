@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import MindyMaghfira from "/src/assets/psikolog/mindy.svg";
 
 const categories = [
   {
@@ -22,7 +23,7 @@ const teamData = [
     name: "Mindy Maghfira, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/mindy.svg",
+    image: MindyMaghfira,
   },
   {
     name: "Rifa Viscarini, M.Psi., Psikolog.",
@@ -198,10 +199,10 @@ const Team = () => {
 
               {/* Info Area */}
               <div className="p-5">
-                <h4 className="font-heading text-[16px] font-bold text-[#1e3a47] leading-snug mb-2 min-h-[44px]">
+                <h4 className="font-heading text-lg font-bold text-[#1e3a47] leading-snug mb-2 min-h-[44px]">
                   {member.name}
                 </h4>
-                <p className="text-xs text-gray-400">{member.role}</p>
+                <p className="text-sm text-gray-400">{member.role}</p>
               </div>
             </motion.div>
           ))}
