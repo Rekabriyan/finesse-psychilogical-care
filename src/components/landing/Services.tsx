@@ -235,34 +235,6 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Bottom CTA */}
-          <motion.div variants={itemVariants} className="text-center mt-16">
-            <div className="inline-flex items-center gap-4 bg-secondary/50 rounded-full px-6 py-4">
-              <div className="flex -space-x-2">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                  <Heart className="text-primary-foreground" size={18} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                  <Brain className="text-accent-foreground" size={18} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-finesse-gold flex items-center justify-center">
-                  <Sparkles className="text-white" size={18} />
-                </div>
-              </div>
-              <p className="text-muted-foreground">
-                Tidak yakin layanan mana yang cocok?{" "}
-                <a
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary font-semibold hover:underline"
-                >
-                  Konsultasi gratis
-                </a>
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
