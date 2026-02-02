@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import MindyMaghfira from "/src/assets/psikolog/mindy.svg";
+import MindyMaghfira from "/psikolog/mindy.svg";
+import RifaViscarini from "/psikolog/rifa.svg";
+import DwiAyuElita from "/psikolog/dwi-ayu.svg";
+import AstridNurAlfaradais from "/psikolog/astrid-nur.svg";
+import DiahAyuPermatasari from "/psikolog/diah-ayu.svg";
+import AstriFirdasannah from "/psikolog/astri-firdasannah.svg";
+import TekstidinegariThaufik from "/psikolog/tekstidinegari-thaufik.svg";
+import NorhafizhaRinanda from "/psikolog/norhafizha-rinanda.svg";
+import GitaraniSofia from "/psikolog/gitarani-sofia.svg";
+import RahmatikaSeptinaChairunnisa from "/psikolog/rahmatika-septina.svg";
+import AmandaPutriYuliardi from "/psikolog/amanda-putri-yuliardi.svg";
+import TriAyuArimbi from "/psikolog/tri-ayu-arimbi.svg";
 
 const categories = [
   {
@@ -29,67 +40,67 @@ const teamData = [
     name: "Rifa Viscarini, M.Psi., Psikolog.",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/rifa.svg",
+    image: RifaViscarini,
   },
   {
     name: "Dwi Ayu Elita Kartilia, M.Psi , Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/dwi-ayu.svg",
+    image: DwiAyuElita,
   },
   {
     name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/astrid-nur.svg",
+    image: AstridNurAlfaradais,
   },
   {
     name: "Diah Ayu Permatasari, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/diah-ayu.svg",
+    image: DiahAyuPermatasari,
   },
   {
     name: "Astri Firdasannah, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/astri-firdasannah.svg",
+    image: AstriFirdasannah,
   },
   {
     name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/tekstidinegari-thaufik.svg",
+    image: TekstidinegariThaufik,
   },
   {
     name: "Norhafizha Rinanda, S.Psi., M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa & Anak",
     category: ["Psikolog Dewasa", "Psikolog Anak & Pendidikan"],
-    image: "/src/assets/psikolog/norhafizha-rinanda.svg",
+    image: NorhafizhaRinanda,
   },
   {
     name: "Gitarani Sofia, M.Psi., Psikolog.",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
-    image: "/src/assets/psikolog/gitarani-sofia.svg",
+    image: GitaraniSofia,
   },
   {
     name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog.",
     role: "Psikolog Klinis Anak & Pendidikan",
     category: ["Psikolog Anak & Pendidikan"],
-    image: "/src/assets/psikolog/rahmatika-septina.svg",
+    image: RahmatikaSeptinaChairunnisa,
   },
   {
     name: "Amanda Putri Yuliardi, M. Psi., Psikolog",
     role: "Psikolog Industri & Organisasi",
     category: ["Psikolog Industri & Organisasi"],
-    image: "/src/assets/psikolog/amanda-putri-yuliardi.svg",
+    image: AmandaPutriYuliardi,
   },
   {
     name: "Tri Ayu Arimbi., M. Psi., Psikolog.",
     role: "Psikolog Industri & Organisasi",
     category: ["Psikolog Industri & Organisasi"],
-    image: "/src/assets/psikolog/tri-ayu-arimbi.svg",
+    image: TriAyuArimbi,
   },
 ];
 
