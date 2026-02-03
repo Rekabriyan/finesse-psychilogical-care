@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Banner from "@/assets/banner-event.png";
 
 const EventsBanner = () => {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ const EventsBanner = () => {
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="src\assets\banner-event.png"
+            src={Banner}
             alt="Event Background"
             className="w-full h-full object-cover object-center opacity-60"
           />
