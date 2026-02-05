@@ -8,9 +8,9 @@ import {
   Instagram,
   Clock,
   ArrowRight,
-  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppIcons from "@/assets/icons-whatsapp.svg";
 
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 const WHATSAPP_URL = "https://wa.me/62881023348781";
@@ -197,7 +197,8 @@ const Contact = () => {
         className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all group"
         aria-label="Chat via WhatsApp"
       >
-        <MessageCircle size={26} />
+        {/* <MessageCircle size={26} /> */}
+        <img src={WhatsAppIcons} alt="WhatsApp Icon" className="w-6 h-6" />
         <span className="absolute right-full mr-4 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
           Chat WhatsApp
         </span>
