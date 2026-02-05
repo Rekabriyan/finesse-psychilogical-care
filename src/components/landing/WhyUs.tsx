@@ -111,8 +111,6 @@ const WhyUs = () => {
               </motion.div>
             ))}
           </div>
-
-          
         </motion.div>
       </div>
     </section>
