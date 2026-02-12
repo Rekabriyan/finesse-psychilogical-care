@@ -187,6 +187,21 @@ const Team = () => {
     }
   }, [selectedMember]);
 
+  // Handler untuk menutup modal dengan tombol ESC
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === "Escape" && selectedMember) {
+        setSelectedMember(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscKey);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, [selectedMember]);
+
   const activeCategoryDetail = categories.find((cat) => cat.name === activeTab);
   const filteredTeam = teamData.filter((member) =>
     member.category.includes(activeTab)
@@ -292,72 +307,147 @@ const Team = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white w-full max-w-4xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row"
+              className="relative bg-white w-full max-w-5xl rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] my-auto"
             >
               {/* Close Button */}
               <button 
                 onClick={() => setSelectedMember(null)}
-                className="absolute top-5 right-5 z-10 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors text-gray-500"
+                className="absolute top-4 right-4 md:top-5 md:right-5 z-10 p-2 bg-white/90 hover:bg-white rounded-full transition-colors text-gray-600 shadow-lg"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              {/* Bagian Foto (Kiri) */}
-              <div className="w-full md:w-[40%] bg-[#fdfcf9] flex items-end justify-center pt-10">
+              {/* MOBILE LAYOUT - Vertical */}
+              <div className="flex flex-col md:hidden w-full max-h-[90vh] overflow-hidden">
+                {/* Bagian Foto - Paling Atas, No Margin (Mobile) */}
+                <div className="w-full bg-gradient-to-br from-[#fdfcf9] to-[#f5f0ea] flex items-end justify-center pt-12 pb-0 relative overflow-hidden min-h-[240px] max-h-[280px] shrink-0">
+                  <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/5 rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-20 left-10 w-40 h-40 bg-orange-100/30 rounded-full blur-3xl"></div>
+                  
+                  <img 
+                    src={selectedMember.image} 
+                    alt={selectedMember.name} 
+                    className="w-full h-auto object-cover object-top filter contrast-[1.02] relative z-10 scale-105 max-w-[280px]"
+                  />
+                </div>
+
+                {/* Bagian Info Fixed - Nama, Role, SIPP (Mobile) */}
+                <div className="w-full px-6 pt-6 pb-4 bg-white border-b border-gray-100 shrink-0">
+                  <h3 className="text-xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
+                  <p className="text-[#a67c52] font-semibold text-sm">{selectedMember.role}</p>
+                  <p className="text-[10px] text-gray-400 mt-2 tracking-widest">SIPP: {selectedMember.sipp}</p>
+                </div>
+
+                {/* Bagian Scrollable (Mobile) */}
+                <div className="w-full px-6 py-6 overflow-y-auto flex-1 min-h-0">
+                  {/* Spesialisasi */}
+                  <div className="mb-6">
+                    <h4 className="text-xs font-bold text-[#1e3a47] mb-3 uppercase tracking-widest">Spesialisasi Kasus</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedMember.specialties?.map((spec, i) => (
+                        <span key={i} className="px-3 py-1.5 bg-[#f3f6f6] text-[#4a707a] rounded-full text-[11px] font-medium border border-[#4a707a]/10 hover:bg-[#4a707a]/5 transition-colors">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Jadwal Praktik */}
+                  <div className="mb-6">
+                    <h4 className="text-xs font-bold text-[#1e3a47] mb-3 uppercase tracking-widest">Jadwal Praktik</h4>
+                    <div className="space-y-2">
+                      {selectedMember.schedule?.map((item, i) => (
+                        <div key={i} className="flex flex-col bg-gray-50/50 p-3 rounded-xl hover:bg-gray-50 transition-colors gap-2">
+                          <div className="flex items-center flex-1">
+                            <span className="w-2 h-2 rounded-full bg-[#4a707a] mr-3 flex-shrink-0" />
+                            <div className="flex flex-col gap-1">
+                              <span className="text-gray-700 font-semibold text-xs">{item.day}</span>
+                              {item.time && (
+                                <span className="text-gray-600 text-xs">{item.time}</span>
+                              )}
+                            </div>
+                          </div>
+                          <span className="px-3 py-1.5 bg-[#e8f5f0] text-[#54b18d] rounded-lg text-[10px] font-bold uppercase tracking-tight self-start">
+                            {item.type}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button className="w-full py-3 bg-[#4a707a] text-white rounded-xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 text-sm">
+                    Konsultasi Sekarang
+                  </button>
+                </div>
+              </div>
+
+              {/* DESKTOP LAYOUT - Horizontal (Side by Side) */}
+              {/* Bagian Foto (Kiri) - Desktop */}
+              <div className="hidden md:flex md:w-[45%] bg-gradient-to-br from-[#fdfcf9] to-[#f5f0ea] items-end justify-center pt-12 relative overflow-hidden">
+                {/* Decorative Circle */}
+                <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 left-10 w-40 h-40 bg-orange-100/30 rounded-full blur-3xl"></div>
+                
                 <img 
                   src={selectedMember.image} 
                   alt={selectedMember.name} 
-                  className="w-[90%] h-auto object-cover filter contrast-[1.02]"
+                  className="w-full h-auto object-cover object-top filter contrast-[1.02] relative z-10 scale-105"
                 />
               </div>
 
-              {/* Bagian Info (Kanan) */}
-              <div className="w-full md:w-[60%] p-8 md:p-12 overflow-y-auto max-h-[70vh] md:max-h-[600px]">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-[#1e3a47] mb-1">{selectedMember.name}</h3>
-                  <p className="text-[#a67c52] font-medium">{selectedMember.role}</p>
-                  <p className="text-xs text-gray-400 mt-2 tracking-widest">SIPP: {selectedMember.sipp}</p>
+              {/* Bagian Info (Kanan) - Desktop */}
+              <div className="hidden md:flex md:flex-col md:w-[55%]">
+                {/* Header Fixed - Nama, Role, SIPP (Desktop) */}
+                <div className="px-10 pt-8 pb-5 bg-white border-b border-gray-100 shrink-0">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
+                  <p className="text-[#a67c52] font-semibold text-base">{selectedMember.role}</p>
+                  <p className="text-xs text-gray-400 mt-3 tracking-widest">SIPP: {selectedMember.sipp}</p>
                 </div>
 
-                <div className="h-[1px] w-full bg-gray-100 mb-8" />
-
-                {/* Spesialisasi */}
-                <div className="mb-8">
-                  <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Spesialisasi Kasus</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedMember.specialties?.map((spec, i) => (
-                      <span key={i} className="px-4 py-1.5 bg-[#f3f6f6] text-[#4a707a] rounded-full text-xs font-medium border border-[#4a707a]/10">
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Jadwal Praktik */}
-                <div className="mb-8">
-                  <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Jadwal Praktik</h4>
-                  <div className="space-y-3">
-                    {selectedMember.schedule?.map((item, i) => (
-                      <div key={i} className="flex items-center justify-between text-sm group">
-                        <div className="flex items-center">
-                          <span className="w-2 h-2 rounded-full bg-[#4a707a] mr-3" />
-                          <span className="text-gray-600 font-medium w-20">{item.day}</span>
-                          <span className="text-gray-400 mx-2">:</span>
-                          <span className="text-gray-500">{item.time}</span>
-                        </div>
-                        <span className="px-3 py-1 bg-[#e8f5f0] text-[#54b18d] rounded-lg text-[10px] font-bold uppercase tracking-tighter">
-                          {item.type}
+                {/* Scrollable Content (Desktop) */}
+                <div className="px-10 py-8 overflow-y-auto flex-1">
+                  {/* Spesialisasi */}
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Spesialisasi Kasus</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedMember.specialties?.map((spec, i) => (
+                        <span key={i} className="px-4 py-2 bg-[#f3f6f6] text-[#4a707a] rounded-full text-xs font-medium border border-[#4a707a]/10 hover:bg-[#4a707a]/5 transition-colors">
+                          {spec}
                         </span>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20">
-                  Konsultasi Sekarang
-                </button>
+                  {/* Jadwal Praktik */}
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Jadwal Praktik</h4>
+                    <div className="space-y-3">
+                      {selectedMember.schedule?.map((item, i) => (
+                        <div key={i} className="flex items-center justify-between text-sm bg-gray-50/50 p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                          <div className="flex items-center flex-1">
+                            <span className="w-2 h-2 rounded-full bg-[#4a707a] mr-3 flex-shrink-0" />
+                            <span className="text-gray-700 font-semibold min-w-[100px]">{item.day}</span>
+                            {item.time && (
+                              <>
+                                <span className="text-gray-400 mx-2">•</span>
+                                <span className="text-gray-600">{item.time}</span>
+                              </>
+                            )}
+                          </div>
+                          <span className="px-3 py-1.5 bg-[#e8f5f0] text-[#54b18d] rounded-lg text-[10px] font-bold uppercase tracking-tight ml-3 flex-shrink-0">
+                            {item.type}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 text-base">
+                    Konsultasi Sekarang
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
