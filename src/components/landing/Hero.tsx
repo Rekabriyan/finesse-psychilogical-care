@@ -1,20 +1,26 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import superGraphic1 from "@/assets/super-graphic-1.png";
+import HeroBanner from "@/assets/hero-banner.webp";
 
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-finesse-cream pt-20">
-      {/* Super Graphic Background */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
-        <img
-          src={superGraphic1}
-          alt=""
-          className="w-full h-full object-cover object-left"
-        />
+      {/* Hero Image with Gradient Overlay */}
+      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden pointer-events-none">
+        <div className="relative w-full h-full">
+          <img
+            src={HeroBanner}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay from left to blend with background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+          {/* Additional white overlay for softer look */}
+          <div className="absolute inset-0 bg-white/40"></div>
+        </div>
       </div>
 
       {/* Decorative Elements */}
@@ -46,9 +52,8 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
             >
-              Menemani Perjalanan
-              <span className="text-primary block mt-2">Kesehatan Mental</span>
-              Anda
+              Menemani Perjalanan Kesehatan
+              <span className="text-primary block mt-2">Mental Anda</span>
             </motion.h1>
 
             <motion.p
@@ -114,47 +119,6 @@ const Hero = () => {
                 </span>
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:flex justify-center items-center"
-          >
-            <div className="relative">
-              {/* Decorative circles */}
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
-                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary/50 to-accent/40 flex items-center justify-center">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      className="w-32 h-32 rounded-full bg-primary flex items-center justify-center shadow-2xl"
-                    >
-                      <Heart className="text-primary-foreground" size={48} />
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <Sparkles className="text-accent-foreground" size={24} />
-              </motion.div>
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 w-14 h-14 bg-finesse-gold rounded-xl flex items-center justify-center shadow-lg"
-              >
-                <Shield className="text-white" size={20} />
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
