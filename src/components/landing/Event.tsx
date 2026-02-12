@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Banner from "@/assets/banner-event.png";
+import Banner from "@/assets/event-banner.webp";
 
 const EventsBanner = () => {
   const ref = useRef(null);
