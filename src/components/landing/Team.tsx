@@ -125,7 +125,7 @@ const teamData = [
   {
     name: "Gitarani Sofia, M.Psi., Psikolog.",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa", "Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Dewasa"],
     image: GitaraniSofia,
     sipp: "20250539-2025-01-1632",
     specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
@@ -133,6 +133,40 @@ const teamData = [
       { day: "Senin", time: "09.00 - 15.00", type: "Online" },
       { day: "Kamis", time: "09.00 - 15.00", type: "Offline" },
       { day: "Jumat", time: "09.00 - 14.00", type: "Online" },
+    ]
+  },
+  {
+    name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: RahmatikaSeptinaChairunnisa,
+    sipp: "20191429-2023-02-2109",
+    specialties: ["Perkembangan Anak", "Pola Asuh", "Parenting Stress", "Tes Kesiapan Sekolah", "Kecerdasan", "Regulasi Emosi & Kecemasan", "Skrining Tumbuh Kembang"],
+    schedule: [
+      { day: "Rabu", time: "13.00 - 15.00 (By Appointment)", type: "Offline" },
+    ]
+  },
+  {
+    name: "Amanda Putri Yuliardi, M. Psi., Psikolog",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: AmandaPutriYuliardi,
+    sipp: "20160647-2023-02-2404",
+    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    schedule: [
+      { day: "By Appointment", type: "Online" },
+    ]
+  },
+  {
+    name: "Tri Ayu Arimbi., M. Psi., Psikolog.",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: TriAyuArimbi,
+    sipp: "0420-15-2-1",
+    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    schedule: [
+      { day: "Senin - Kamis", time: "14.00 - 17.00", type: "Online" },
+      { day: "Jumat", time: "13.00 - 16.00", type: "Online" },
     ]
   },
 
