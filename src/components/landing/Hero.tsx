@@ -7,19 +7,19 @@ const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-finesse-cream pt-20">
-      {/* Hero Image with Gradient Overlay */}
-      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden pointer-events-none">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-finesse-cream pt-24">
+      {/* Hero Image Full Width with Gradient Overlay */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="relative w-full h-full">
           <img
             src={HeroBanner}
             alt=""
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay from left to blend with background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+          {/* Strong gradient overlay from left to make text readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40"></div>
           {/* Additional white overlay for softer look */}
-          <div className="absolute inset-0 bg-white/40"></div>
+          <div className="absolute inset-0 bg-white/30"></div>
         </div>
       </div>
 
@@ -124,7 +124,7 @@ const Hero = () => {
       </div>
 
       {/* Wave divider */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -136,7 +136,7 @@ const Hero = () => {
             fill="hsl(var(--card))"
           />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 };
