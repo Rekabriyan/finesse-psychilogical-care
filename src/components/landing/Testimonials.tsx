@@ -85,18 +85,18 @@ const Testimonials = () => {
           <motion.div variants={fadeInUp} className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Main Testimonial Card */}
-              <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border shadow-lg relative overflow-hidden">
+              <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border shadow-lg relative">
                 {/* Quote Icon */}
-                <div className="absolute top-6 right-6 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
-                  <Quote className="text-primary" size={32} />
+                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#1F555C] rounded-2xl flex items-center justify-center">
+                  <Quote className="text-white" size={32} />
                 </div>
 
                 {/* Rating */}
-                <div className="flex gap-1 mb-6">
+                {/* <div className="flex gap-1 mb-6">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                     <Star key={i} className="text-finesse-gold fill-finesse-gold" size={20} />
                   ))}
-                </div>
+                </div> */}
 
                 {/* Content */}
                 <motion.p
@@ -117,11 +117,11 @@ const Testimonials = () => {
                   transition={{ duration: 0.4, delay: 0.2 }}
                   className="flex items-center gap-4"
                 >
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  {/* <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <span className="text-white font-bold text-lg">
                       {testimonials[currentIndex].name[0]}
                     </span>
-                  </div>
+                  </div> */}  
                   <div>
                     <div className="font-heading font-bold text-foreground">
                       {testimonials[currentIndex].name}
