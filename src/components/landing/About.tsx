@@ -54,11 +54,10 @@ const About = () => {
           </motion.div>
 
           {/* Main Content (Stats) */}
-          {/* Responsif: 1 kolom (HP), 2 kolom (Tablet), 4 kolom (Desktop) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-24 p-8">
             {stats.map((stat, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <div className="bg-secondary/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 relative overflow-hidden group hover:bg-secondary/60 transition-colors">
+                <div className="bg-secondary/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 relative group hover:bg-secondary/60 transition-colors">
                   <div className="absolute -top-4 -left-4 w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <stat.icon className="text-primary-foreground" size={24} />
                   </div>
@@ -74,7 +73,6 @@ const About = () => {
           </div>
 
           {/* Vision & Mission */}
-          {/* Responsif: Stack vertikal di mobile, Grid di desktop */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
             {/* Visi */}
             <motion.div
