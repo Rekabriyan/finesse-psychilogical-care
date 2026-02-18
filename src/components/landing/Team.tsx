@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-// --- Import Asset (Sesuaikan dengan path Anda) ---
 import MindyMaghfira from "/psikolog/mindy.svg";
 import RifaViscarini from "/psikolog/rifa.svg";
 import DwiAyuElita from "/psikolog/dwi-ayu.svg";
@@ -178,34 +177,20 @@ const Team = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Mencegah scroll pada body saat modal terbuka
   useEffect(() => {
+    const handleEscKey = (e) => (e.key === "Escape" && setSelectedMember(null));
     if (selectedMember) {
       document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleEscKey);
     } else {
       document.body.style.overflow = "unset";
-    }
-  }, [selectedMember]);
-
-  // Handler untuk menutup modal dengan tombol ESC
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === "Escape" && selectedMember) {
-        setSelectedMember(null);
-      }
-    };
-
-    document.addEventListener("keydown", handleEscKey);
-
-    return () => {
       document.removeEventListener("keydown", handleEscKey);
-    };
+    }
+    return () => document.removeEventListener("keydown", handleEscKey);
   }, [selectedMember]);
 
   const activeCategoryDetail = categories.find((cat) => cat.name === activeTab);
-  const filteredTeam = teamData.filter((member) =>
-    member.category.includes(activeTab)
-  );
+  const filteredTeam = teamData.filter((member) => member.category.includes(activeTab));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -218,24 +203,26 @@ const Team = () => {
   };
 
   return (
-    <section id="tim" className="py-20 bg-[#fdfcf9]" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="tim" className="py-16 md:py-28 bg-[#fdfcf9]" ref={ref}>
+      <div className="container mx-auto px-4 md:px-8">
+        
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <span className="text-xs uppercase tracking-[0.2em] text-gray-500 font-medium">Tim Kami</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a47] mt-2 mb-4">Tim Profesional Kami</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">Tim Kami</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1D5158] mt-2 mb-4 leading-tight">Tim Profesional Kami</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-4">
             Bertemu dengan para psikolog bersertifikat kami yang berdedikasi untuk menemani perjalanan kesejahteraan Anda.
           </p>
         </div>
 
-        {/* Tab Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {/* --- TAB FILTER UPDATE: HIDE SCROLLBAR --- */}
+        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-3 mb-12 overflow-x-auto pb-4 md:pb-0 
+          [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {categories.map((cat) => (
             <button
               key={cat.name}
               onClick={() => setActiveTab(cat.name)}
-              className={`px-6 py-2 rounded-full border text-sm transition-all duration-300 ${
+              className={`px-5 md:px-6 py-2 rounded-full border text-xs md:text-sm transition-all duration-300 whitespace-nowrap shrink-0 ${
                 activeTab === cat.name
                   ? "bg-[#4a707a] text-white border-[#4a707a] shadow-md"
                   : "bg-white text-gray-400 border-gray-200 hover:border-[#4a707a]/50"
@@ -246,13 +233,13 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Category Description */}
-        <motion.div key={`header-${activeTab}`} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="mb-10">
-          <h3 className="text-2xl font-bold text-[#1e3a47] mb-2">{activeCategoryDetail?.name}</h3>
-          <p className="text-gray-400 text-sm mb-4 max-w-4xl leading-relaxed">{activeCategoryDetail?.description}</p>
-          <div className="flex items-center gap-4">
-            <span className="text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">Daftar Psikolog</span>
-            <div className="h-[1px] w-full bg-gray-200"></div>
+        {/* Category Detail Section */}
+        <motion.div key={`header-${activeTab}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-10">
+          <h3 className="text-xl md:text-2xl font-bold text-[#1e3a47] mb-2">{activeCategoryDetail?.name}</h3>
+          <p className="text-gray-400 text-xs md:text-sm max-w-4xl leading-relaxed">{activeCategoryDetail?.description}</p>
+          <div className="flex items-center gap-4 mt-6">
+            <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">Daftar Psikolog</span>
+            <div className="h-[1px] w-full bg-gray-100"></div>
           </div>
         </motion.div>
 
@@ -262,190 +249,112 @@ const Team = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
         >
           {filteredTeam.map((member, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               onClick={() => setSelectedMember(member)}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer"
+              className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
             >
-              <div className="aspect-[5/4] bg-gradient-to-b from-orange-50 to-white relative flex items-end justify-center overflow-hidden">
+              <div className="aspect-[4/5] sm:aspect-[5/4] bg-gradient-to-b from-orange-50 to-white relative overflow-hidden shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              <div className="p-5">
-                <h4 className="font-heading text-lg font-bold text-[#1e3a47] leading-snug mb-2 min-h-[44px]">
+              <div className="p-3 md:p-5 flex-grow">
+                <h4 className="font-heading text-sm md:text-lg font-bold text-[#1D5158] leading-tight mb-1 md:mb-2 line-clamp-2 md:min-h-[44px]">
                   {member.name}
                 </h4>
-                <p className="text-sm text-gray-400">{member.role}</p>
+                <p className="text-[10px] md:text-sm text-gray-400 font-medium">{member.role}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* --- MODAL DETAIL --- */}
+      {/* --- MODAL DETAIL (Tetap Sama) --- */}
       <AnimatePresence>
         {selectedMember && (
-          <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-6">
-            {/* Overlay */}
+          <div className="fixed inset-0 z-[999] flex items-center justify-center p-0 sm:p-6">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedMember(null)}
-              className="absolute inset-0 bg-[#1e3a47]/40 backdrop-blur-md"
+              className="absolute inset-0 bg-[#1e3a47]/60 backdrop-blur-sm"
             />
 
-            {/* Modal Box */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white w-full max-w-5xl rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] my-auto"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              className="relative bg-white w-full h-full sm:h-auto sm:max-w-4xl md:max-w-5xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[100vh] sm:max-h-[90vh]"
             >
-              {/* Close Button */}
               <button 
                 onClick={() => setSelectedMember(null)}
-                className="absolute top-4 right-4 md:top-5 md:right-5 z-10 p-2 bg-white/90 hover:bg-white rounded-full transition-colors text-gray-600 shadow-lg"
+                className="absolute top-4 right-4 z-20 p-2.5 bg-white/80 hover:bg-white rounded-full transition-all text-gray-800 shadow-lg md:top-6 md:right-6"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              {/* MOBILE LAYOUT - Vertical */}
-              <div className="flex flex-col md:hidden w-full max-h-[90vh] overflow-hidden">
-                {/* Bagian Foto - Paling Atas, No Margin (Mobile) */}
-                <div className="w-full bg-gradient-to-br from-[#fdfcf9] to-[#f5f0ea] flex items-end justify-center pt-12 pb-0 relative overflow-hidden min-h-[240px] max-h-[280px] shrink-0">
-                  <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/5 rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-20 left-10 w-40 h-40 bg-orange-100/30 rounded-full blur-3xl"></div>
-                  
-                  <img 
-                    src={selectedMember.image} 
-                    alt={selectedMember.name} 
-                    className="w-full h-auto object-cover object-top filter contrast-[1.02] relative z-10 scale-105 max-w-[280px]"
-                  />
-                </div>
-
-                {/* Bagian Info Fixed - Nama, Role, SIPP (Mobile) */}
-                <div className="w-full px-6 pt-6 pb-4 bg-white border-b border-gray-100 shrink-0">
-                  <h3 className="text-xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
-                  <p className="text-[#a67c52] font-semibold text-sm">{selectedMember.role}</p>
-                  <p className="text-[10px] text-gray-400 mt-2 tracking-widest">SIPP: {selectedMember.sipp}</p>
-                </div>
-
-                {/* Bagian Scrollable (Mobile) */}
-                <div className="w-full px-6 py-6 overflow-y-auto flex-1 min-h-0">
-                  {/* Spesialisasi */}
-                  <div className="mb-6">
-                    <h4 className="text-xs font-bold text-[#1e3a47] mb-3 uppercase tracking-widest">Spesialisasi Kasus</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedMember.specialties?.map((spec, i) => (
-                        <span key={i} className="px-3 py-1.5 bg-[#f3f6f6] text-[#4a707a] rounded-full text-[11px] font-medium border border-[#4a707a]/10 hover:bg-[#4a707a]/5 transition-colors">
-                          {spec}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Jadwal Praktik */}
-                  <div className="mb-6">
-                    <h4 className="text-xs font-bold text-[#1e3a47] mb-3 uppercase tracking-widest">Jadwal Praktik</h4>
-                    <div className="space-y-2">
-                      {selectedMember.schedule?.map((item, i) => (
-                        <div key={i} className="flex flex-col bg-gray-50/50 p-3 rounded-xl hover:bg-gray-50 transition-colors gap-2">
-                          <div className="flex items-center flex-1">
-                            <span className="w-2 h-2 rounded-full bg-[#4a707a] mr-3 flex-shrink-0" />
-                            <div className="flex flex-col gap-1">
-                              <span className="text-gray-700 font-semibold text-xs">{item.day}</span>
-                              {item.time && (
-                                <span className="text-gray-600 text-xs">{item.time}</span>
-                              )}
-                            </div>
-                          </div>
-                          <span className="px-3 py-1.5 bg-[#e8f5f0] text-[#54b18d] rounded-lg text-[10px] font-bold uppercase tracking-tight self-start">
-                            {item.type}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button className="w-full py-3 bg-[#4a707a] text-white rounded-xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 text-sm">
-                    Konsultasi Sekarang
-                  </button>
-                </div>
-              </div>
-
-              {/* DESKTOP LAYOUT - Horizontal (Side by Side) */}
-              {/* Bagian Foto (Kiri) - Desktop */}
-              <div className="hidden md:flex md:w-[45%] bg-gradient-to-br from-[#fdfcf9] to-[#f5f0ea] items-end justify-center pt-12 relative overflow-hidden">
-                {/* Decorative Circle */}
-                <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 left-10 w-40 h-40 bg-orange-100/30 rounded-full blur-3xl"></div>
-                
+              <div className="w-full md:w-[40%] lg:w-[45%] bg-[#f8f6f2] flex items-end justify-center relative overflow-hidden shrink-0 h-[40vh] md:h-auto">
+                <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/10 rounded-full blur-3xl"></div>
                 <img 
                   src={selectedMember.image} 
                   alt={selectedMember.name} 
-                  className="w-full h-auto object-cover object-top filter contrast-[1.02] relative z-10 scale-105"
+                  className="w-full h-full object-cover object-top filter contrast-[1.02] scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden" />
               </div>
 
-              {/* Bagian Info (Kanan) - Desktop */}
-              <div className="hidden md:flex md:flex-col md:w-[55%]">
-                {/* Header Fixed - Nama, Role, SIPP (Desktop) */}
-                <div className="px-10 pt-8 pb-5 bg-white border-b border-gray-100 shrink-0">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
-                  <p className="text-[#a67c52] font-semibold text-base">{selectedMember.role}</p>
-                  <p className="text-xs text-gray-400 mt-3 tracking-widest">SIPP: {selectedMember.sipp}</p>
+              <div className="w-full md:w-[60%] lg:w-[55%] flex flex-col bg-white overflow-hidden">
+                <div className="px-6 md:px-10 pt-6 md:pt-10 pb-4 border-b border-gray-50">
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
+                  <p className="text-[#a67c52] font-bold text-sm md:text-base uppercase tracking-wider">{selectedMember.role}</p>
                 </div>
 
-                {/* Scrollable Content (Desktop) */}
-                <div className="px-10 py-8 overflow-y-auto flex-1">
-                  {/* Spesialisasi */}
-                  <div className="mb-8">
-                    <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Spesialisasi Kasus</h4>
+                <div className="flex-1 overflow-y-auto px-6 md:px-10 py-6 space-y-8">
+                  <section>
+                    <h4 className="text-[10px] md:text-xs font-bold text-gray-400 mb-4 uppercase tracking-[0.2em]">Spesialisasi Kasus</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedMember.specialties?.map((spec, i) => (
-                        <span key={i} className="px-4 py-2 bg-[#f3f6f6] text-[#4a707a] rounded-full text-xs font-medium border border-[#4a707a]/10 hover:bg-[#4a707a]/5 transition-colors">
+                        <span key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-50 text-[#4a707a] rounded-lg text-[10px] md:text-xs font-semibold border border-gray-100">
                           {spec}
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </section>
 
-                  {/* Jadwal Praktik */}
-                  <div className="mb-8">
-                    <h4 className="text-sm font-bold text-[#1e3a47] mb-4 uppercase tracking-widest">Jadwal Praktik</h4>
-                    <div className="space-y-3">
+                  <section>
+                    <h4 className="text-[10px] md:text-xs font-bold text-gray-400 mb-4 uppercase tracking-[0.2em]">Jadwal Praktik</h4>
+                    <div className="grid gap-3">
                       {selectedMember.schedule?.map((item, i) => (
-                        <div key={i} className="flex items-center justify-between text-sm bg-gray-50/50 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                          <div className="flex items-center flex-1">
-                            <span className="w-2 h-2 rounded-full bg-[#4a707a] mr-3 flex-shrink-0" />
-                            <span className="text-gray-700 font-semibold min-w-[100px]">{item.day}</span>
-                            {item.time && (
-                              <>
-                                <span className="text-gray-400 mx-2">•</span>
-                                <span className="text-gray-600">{item.time}</span>
-                              </>
-                            )}
+                        <div key={i} className="flex items-center justify-between p-3 md:p-4 bg-[#fcfcfc] rounded-2xl border border-gray-50 transition-all hover:border-[#4a707a]/20">
+                          <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                            <span className="text-gray-800 font-bold text-xs md:text-sm">{item.day}</span>
+                            {item.time && <span className="text-gray-500 text-[11px] md:text-xs">{item.time}</span>}
                           </div>
-                          <span className="px-3 py-1.5 bg-[#e8f5f0] text-[#54b18d] rounded-lg text-[10px] font-bold uppercase tracking-tight ml-3 flex-shrink-0">
+                          <span className="px-3 py-1 bg-[#e8f5f0] text-[#54b18d] rounded-full text-[9px] md:text-[10px] font-bold uppercase">
                             {item.type}
                           </span>
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </section>
+                </div>
 
-                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 text-base">
+                <div className="p-6 md:p-10 pt-4 border-t border-gray-50">
+                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 flex items-center justify-center gap-3">
                     Konsultasi Sekarang
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                       <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
