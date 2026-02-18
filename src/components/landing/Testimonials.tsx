@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
@@ -10,28 +10,24 @@ const testimonials = [
     name: "Klien A.",
     role: "Professional",
     content: "Finesse membantu saya melewati masa-masa sulit dengan pendekatan yang hangat dan profesional. Saya merasa didengar dan dipahami sepanjang proses konseling.",
-    rating: 5,
   },
   {
     id: 2,
     name: "Klien B.",
     role: "Mahasiswa",
     content: "Asesmen karir di Finesse membuka wawasan baru tentang potensi diri saya. Sangat membantu dalam menentukan langkah karir ke depan.",
-    rating: 5,
   },
   {
     id: 3,
     name: "Klien C.",
     role: "Ibu Rumah Tangga",
     content: "Program Persepsi Perempuan sangat memberdayakan. Saya menemukan komunitas yang suportif dan belajar banyak tentang self-care.",
-    rating: 5,
   },
   {
     id: 4,
     name: "HR Manager",
     role: "Perusahaan",
     content: "Kerjasama dengan Finesse dalam program employee wellness sangat berdampak positif. Karyawan kami lebih produktif dan bahagia.",
-    rating: 5,
   },
 ];
 
@@ -54,12 +50,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimoni" className="py-20 lg:py-32 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
-      {/* Decorative */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
+    <section id="testimoni" className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+      {/* Decorative Blobs */}
+      <div className="absolute top-10 md:top-20 left-0 md:left-10 w-24 md:w-32 h-24 md:h-32 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 md:bottom-20 right-0 md:right-10 w-32 md:w-40 h-32 md:h-40 bg-accent/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-4 lg:px-8" ref={ref}>
+      <div className="container mx-auto px-4 md:px-8" ref={ref}>
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -68,105 +64,100 @@ const Testimonials = () => {
           }}
         >
           {/* Section Header */}
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+          <motion.div variants={fadeInUp} className="text-center mb-12 md:mb-16">
+            <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-[0.2em]">
               Testimoni
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-4 md:mb-6 px-2">
               Apa Kata Mereka
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto px-4">
               Cerita dan pengalaman dari klien yang telah bersama Finesse dalam
               perjalanan kesejahteraan psikologis mereka.
             </p>
           </motion.div>
 
           {/* Testimonial Carousel */}
-          <motion.div variants={fadeInUp} className="max-w-4xl mx-auto">
+          <motion.div variants={fadeInUp} className="max-w-4xl mx-auto px-2 md:px-0">
             <div className="relative">
               {/* Main Testimonial Card */}
-              <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border shadow-lg relative">
-                {/* Quote Icon */}
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#1F555C] rounded-2xl flex items-center justify-center">
-                  <Quote className="text-white" size={32} />
+              <div className="bg-card rounded-[2rem] p-8 md:p-12 border border-border shadow-xl relative min-h-[320px] md:min-h-[300px] flex flex-col justify-center">
+                
+                {/* Quote Icon - Adjusted for Mobile */}
+                <div className="absolute -top-4 -right-2 md:-top-6 md:-right-6 w-12 h-12 md:w-16 md:h-16 bg-[#1F555C] rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg">
+                  <Quote className="text-white w-6 h-6 md:w-8 md:h-8" />
                 </div>
 
-                {/* Rating */}
-                {/* <div className="flex gap-1 mb-6">
-                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <Star key={i} className="text-finesse-gold fill-finesse-gold" size={20} />
-                  ))}
-                </div> */}
+                {/* Animated Content */}
+                <div className="relative overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-foreground text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 font-medium italic">
+                        "{testimonials[currentIndex].content}"
+                      </p>
 
-                {/* Content */}
-                <motion.p
-                  key={currentIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="text-foreground text-lg lg:text-xl leading-relaxed mb-8 font-medium"
-                >
-                  "{testimonials[currentIndex].content}"
-                </motion.p>
-
-                {/* Author */}
-                <motion.div
-                  key={`author-${currentIndex}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                  className="flex items-center gap-4"
-                >
-                  {/* <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {testimonials[currentIndex].name[0]}
-                    </span>
-                  </div> */}  
-                  <div>
-                    <div className="font-heading font-bold text-foreground">
-                      {testimonials[currentIndex].name}
-                    </div>
-                    <div className="text-muted-foreground text-sm">
-                      {testimonials[currentIndex].role}
-                    </div>
-                  </div>
-                </motion.div>
+                      {/* Author */}
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg border border-primary/20">
+                          {testimonials[currentIndex].name[0]}
+                        </div>
+                        <div>
+                          <div className="font-heading font-bold text-foreground text-base md:text-lg">
+                            {testimonials[currentIndex].name}
+                          </div>
+                          <div className="text-muted-foreground text-xs md:text-sm">
+                            {testimonials[currentIndex].role}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
 
-              {/* Navigation */}
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={prevTestimonial}
-                  className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  <ChevronLeft size={20} />
-                </Button>
+              {/* Navigation Controls */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
+                <div className="flex items-center gap-4">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={prevTestimonial}
+                    className="rounded-full w-12 h-12 border-primary/20 text-primary hover:bg-primary hover:text-white transition-all shadow-sm"
+                  >
+                    <ChevronLeft size={24} />
+                  </Button>
 
-                {/* Dots */}
-                <div className="flex gap-2">
-                  {testimonials.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                        idx === currentIndex
-                          ? "bg-primary w-8"
-                          : "bg-primary/30 hover:bg-primary/50"
-                      }`}
-                    />
-                  ))}
+                  {/* Dots - Visible mostly on desktop or small steps */}
+                  <div className="flex gap-2.5">
+                    {testimonials.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`h-2.5 rounded-full transition-all duration-300 ${
+                          idx === currentIndex
+                            ? "bg-primary w-8"
+                            : "bg-primary/20 hover:bg-primary/40 w-2.5"
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={nextTestimonial}
+                    className="rounded-full w-12 h-12 border-primary/20 text-primary hover:bg-primary hover:text-white transition-all shadow-sm"
+                  >
+                    <ChevronRight size={24} />
+                  </Button>
                 </div>
-
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={nextTestimonial}
-                  className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  <ChevronRight size={20} />
-                </Button>
               </div>
             </div>
           </motion.div>

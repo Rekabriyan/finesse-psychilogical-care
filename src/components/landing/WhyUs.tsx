@@ -61,7 +61,7 @@ const WhyUs = () => {
   };
 
   return (
-    <section id="mengapakami" className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+    <section id="keunggulankami" className="py-20 lg:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-primary/5 rounded-bl-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-accent/5 rounded-tr-[100px] pointer-events-none" />
@@ -75,10 +75,10 @@ const WhyUs = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <span className="text-accent font-medium text-sm uppercase tracking-wider">
-              Mengapa Finesse
+              Keunggulan Finesse
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-              Keunggulan Kami
+              Partner Kesehatan Mental Terbaik
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               Finesse berkomitmen untuk memberikan layanan psikologi berkualitas
