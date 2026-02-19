@@ -64,7 +64,7 @@ const Services = () => {
   };
 
   return (
-    <section id="layanan" className="bg-background relative py-12 md:py-12 overflow-hidden">
+    <section id="layanan" className="bg-background relative py-12 md:py-0 overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-[-5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -165,7 +165,7 @@ const Services = () => {
                 Masih bingung layanan mana yang cocok?{" "}
                 <br className="block sm:hidden" />
                 <span className="font-bold text-[#2D5A5E] cursor-pointer hover:underline inline-block mt-1 sm:mt-0">
-                  Konsultasi gratis
+                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" >Konsultasi gratis</a> 
                 </span>
               </p>
             </div>

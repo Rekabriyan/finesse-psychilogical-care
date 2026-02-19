@@ -10,16 +10,16 @@ const footerLinks = {
   tentang: [
     { label: "Mengapa Kami", href: "#mengapakami" },
     { label: "Layanan", href: "#layanan" },
-    { label: "Keunggulan", href: "#keunggulan" },
+    { label: "Keunggulan", href: "#keunggulankami" },
     { label: "Tim Kami", href: "#tim" },
     { label: "Testimoni", href: "#testimoni" },
     { label: "Event", href: "#event" },
-
+    { label: "Kontak", href: "#kontak" },
   ],
   kontak: [
-    { label: "Jl. Bengawan No. 45, Cihapit - Bandung", href: "#" },
+    { label: "Jl. Bengawan No. 45, Cihapit - Bandung", href: "https://www.google.com/maps/place/White+space,+Jl.+Bengawan+No.45,+Cihapit,+Kec.+Bandung+Wetan,+Kota+Bandung,+Jawa+Barat+40114/@-6.9108196,107.6267001,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68e7c915fda11f:0xc520c00a5ed35531!8m2!3d-6.9108249!4d107.629275!16s%2Fg%2F11csns7h3x?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D" },
     { label: "halo.finesse@gmail.com", href: "mailto:halo.finesse@gmail.com" },
-    { label: "0881-0233-48781", href: "tel:+62881023348781" },
+    { label: "0881-0233-48781", href: "https://wa.me/6288102334878" },
   ],
 };
 
@@ -125,7 +125,8 @@ const Footer = () => {
         <div className="container mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} Finesse Psychological Care. All rights reserved.
+              © {new Date().getFullYear()} Finesse Psychological Care. All
+              rights reserved.
             </p>
           </div>
         </div>

@@ -21,6 +21,7 @@ import DillaTriaFebrina from "/psikolog/dilla-tria-febrina.svg";
 import AyuLaraswati from "/psikolog/ayu-laraswati.svg";
 import AnggiRengganis from "/psikolog/anggi-rengganis.svg";
 import FarhanZakariyya from "/psikolog/farhan-zakariyya.svg";
+import NoviAdelina from "/psikolog/novi-adelina.svg";
 
 const categories = [
   {
@@ -38,14 +39,94 @@ const categories = [
     description:
       "Membantu perusahaan dalam manajemen SDM dan membantu individu agar sesuai dengan kompetensi organisasi.",
   },
-  {
-    name: "Psikolog Klinis Dewasa & Anak",
-    description:
-      "Layanan psikologi klinis yang mencakup rentang usia anak hingga dewasa.",
-  },
 ];
 
 const teamData = [
+  {
+    name: "Novi Adelina, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: NoviAdelina,
+    sipp: "20240268 - 2024 - 1358",
+    specialties: [
+      "Relasi Sosial",
+      "Quarter Life Crisis",
+      "Anxiety",
+      "Stress",
+      "Hubungan Keluarga",
+      "Career",
+    ],
+    schedule: [
+      {
+        day: "By Appointment",
+        time: "",
+        type: ["Offline", "Online"],
+      },
+    ],
+  },
+  {
+    name: "Dwi Ayu Elita Kartilia, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: DwiAyuElita,
+    sipp: "20220664 - 2023 - 0772",
+    specialties: ["Anxiety", "PTSD", "Quarter Life Crisis"],
+    schedule: [
+      { day: "Senin - Kamis", time: "19.00 - 21.00", type: ["Online"] },
+      { day: "Sabtu", time: "10.00 - 15.00", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: TekstidinegariThaufik,
+    sipp: "20180809-2024-1359",
+    specialties: [
+      "Kecemasan",
+      "Depresi",
+      "Trauma",
+      "Psikosomatis Akibat Stress",
+      "Relationship",
+    ],
+    schedule: [
+      { day: "Kamis", time: "09.00 - 14.00", type: ["Offline"] },
+      { day: "Sabtu", time: "14.00 - 17.00", type: ["Offline"] },
+    ],
+  },
+  {
+    name: "Astri Firdasannah, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: AstriFirdasannah,
+    sipp: "20180763-2022-01-2127",
+    specialties: [
+      "Anxiety",
+      "OCD",
+      "Depresi",
+      "Quarter Life Crisis",
+      "Relationship",
+      "Parenting",
+    ],
+    schedule: [
+      { day: "Selasa", time: "16.00 - 20.00", type: ["Online", "Offline"] },
+    ],
+  },
+  {
+    name: "Diah Ayu Permatasari, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: DiahAyuPermatasari,
+    sipp: "20240269 - 2024 - 1357",
+    specialties: [
+      "Anxiety",
+      "Trauma",
+      "Relationship",
+      "Regulasi Emosi",
+      "Self-Harm",
+    ],
+    schedule: [{ day: "By Appointment", time: "", type: ["Online"] }],
+  },
   {
     name: "Mindy Maghfira, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
@@ -68,7 +149,37 @@ const teamData = [
     ],
   },
   {
-    name: "Rifa Viscarini, M.Psi., Psikolog.",
+    name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: AstridNurAlfaradais,
+    sipp: "20231329-2023-01-2209",
+    specialties: [
+      "Anxiety",
+      "Stress",
+      "Depresi",
+      "Gangguan Kepribadian",
+      "Relationship",
+      "Self Development",
+    ],
+    schedule: [
+      { day: "Kamis", time: "09.00 - 11.00", type: ["Offline"] },
+      { day: "Jumat", time: "16.00 - 18.00", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Norhafizha Rinanda, M.Psi., Psikolog",
+    role: "Psikolog Klinis Dewasa",
+    category: ["Psikolog Dewasa"],
+    image: NorhafizhaRinanda,
+    sipp: "503/002/SIPPK-DisPMPTSP/HSS/VI/2022",
+    specialties: ["Anxiety", "PTSD", "Relationship", "Masalah Akademik"],
+    schedule: [
+      { day: "Senin - Kamis", time: "18.00 - 20.00", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Rifa Viscarini, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
     image: RifaViscarini,
@@ -93,100 +204,7 @@ const teamData = [
     ],
   },
   {
-    name: "Dwi Ayu Elita Kartilia, M.Psi , Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
-    image: DwiAyuElita,
-    sipp: "20220664 - 2023 - 0772",
-    specialties: ["Anxiety", "PTSD", "Quarter Life Crisis"],
-    schedule: [
-      { day: "Senin - Kamis", time: "19.00 - 21.00", type: ["Online"] },
-      { day: "Sabtu", time: "10.00 - 15.00", type: ["Online"] },
-    ],
-  },
-  {
-    name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
-    image: AstridNurAlfaradais,
-    sipp: "20231329-2023-01-2209",
-    specialties: [
-      "Anxiety",
-      "Stress",
-      "Depresi",
-      "Gangguan Kepribadian",
-      "Relationship",
-      "Self Development",
-    ],
-    schedule: [
-      { day: "Kamis", time: "09.00 - 11.00", type: ["Offline"] },
-      { day: "Jumat", time: "16.00 - 18.00", type: ["Online"] },
-    ],
-  },
-  {
-    name: "Diah Ayu Permatasari, M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
-    image: DiahAyuPermatasari,
-    sipp: "20240269 - 2024 - 1357",
-    specialties: [
-      "Anxiety",
-      "Trauma",
-      "Relationship",
-      "Regulasi Emosi",
-      "Self-Harm",
-    ],
-    schedule: [{ day: "By Appointment", time: "", type: ["Online"] }],
-  },
-  {
-    name: "Astri Firdasannah, M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
-    image: AstriFirdasannah,
-    sipp: "20180763-2022-01-2127",
-    specialties: [
-      "Anxiety",
-      "OCD",
-      "Depresi",
-      "Quarter Life Crisis",
-      "Relationship",
-      "Parenting",
-    ],
-    schedule: [
-      { day: "Selasa", time: "16.00 - 20.00", type: ["Online", "Offline"] },
-    ],
-  },
-  {
-    name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
-    image: TekstidinegariThaufik,
-    sipp: "20180809-2024-1359",
-    specialties: [
-      "Kecemasan",
-      "Depresi",
-      "Trauma",
-      "Psikosomatis Akibat Stress",
-      "Relationship",
-    ],
-    schedule: [
-      { day: "Kamis", time: "09.00 - 14.00", type: ["Offline"] },
-      { day: "Sabtu", time: "14.00 - 17.00", type: ["Offline"] },
-    ],
-  },
-  {
-    name: "Norhafizha Rinanda, S.Psi., M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa & Anak",
-    category: ["Psikolog Klinis Dewasa & Anak"],
-    image: NorhafizhaRinanda,
-    sipp: "503/002/SIPPK-DisPMPTSP/HSS/VI/2022",
-    specialties: ["Anxiety", "PTSD", "Relationship", "Masalah Akademik"],
-    schedule: [
-      { day: "Senin - Kamis", time: "18.00 - 20.00", type: ["Online"] },
-    ],
-  },
-  {
-    name: "Gitarani Sofia, M.Psi., Psikolog.",
+    name: "Gitarani Sofia, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
     image: GitaraniSofia,
@@ -221,85 +239,21 @@ const teamData = [
     ],
   },
   {
-    name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog",
+    name: "Farhan Zakariyya, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
     category: ["Psikolog Anak & Pendidikan"],
-    image: RahmatikaSeptinaChairunnisa,
-    sipp: "20191429-2023-02-2109",
-    specialties: [
-      "Perkembangan Anak",
-      "Pola Asuh",
-      "Parenting Stress",
-      "Kesiapan Sekolah",
-    ],
-    schedule: [
-      {
-        day: "Rabu",
-        time: "13.00 - 15.00 (By Appointment)",
-        type: ["Offline"],
-      },
-    ],
-  },
-  {
-    name: "Amanda Putri Yuliardi, M. Psi., Psikolog",
-    role: "Psikolog Industri & Organisasi",
-    category: ["Psikolog Industri & Organisasi"],
-    image: AmandaPutriYuliardi,
-    sipp: "20160647 - 2023 - 02 - 2404",
-    specialties: ["Asesmen & Feedback"],
-    schedule: [
-      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
-    ],
-  },
-  {
-    name: "Tri Ayu Arimbi., M. Psi., Psikolog.",
-    role: "Psikolog Industri & Organisasi",
-    category: ["Psikolog Industri & Organisasi"],
-    image: TriAyuArimbi,
-    sipp: "0420-15-2-1",
-    specialties: ["Rekrutmen", "Promosi", "Performance Appraisal"],
-    schedule: [
-      {
-        day: "Senin - Kamis",
-        time: "14.00 - 17.00",
-        type: ["Offline"],
-      },
-      {
-        day: "Jumat",
-        time: "13.00 - 16.00",
-        type: ["Offline"],
-      },
-    ],
-  },
-  {
-    name: "Asmiani Fawziah, M.Psi., Psikolog",
-    role: "Psikolog Industri & Organisasi",
-    category: ["Psikolog Industri & Organisasi"],
-    image: AsmianiFawziah,
-    sipp: "",
-    specialties: [
-      "Relasi Sosial",
-      "Hubungan Keluarga",
-      "Self Development",
-      "Assessment Center",
-    ],
-    schedule: [
-      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
-    ],
-  },
-  {
-    name: "Aisyadiva Ilmiani, M.Psi., Psikolog",
-    role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
-    image: AisyadivaIlmiani,
-    sipp: "20231335 - 2023 - 01 - 2220",
+    image: FarhanZakariyya,
+    sipp: "20170643 - 2020 - 02 - 0502",
     specialties: [
       "Masalah Belajar",
-      "Karir",
-      "Kesiapan Sekolah",
+      "Minat & Bakat",
+      "Kesehatan Mental",
       "Relationship",
     ],
-    schedule: [{ day: "Minggu", time: "09.00 - 12.00", type: ["Online"] }],
+    schedule: [
+      { day: "Rabu", time: "13.00 - 15.00", type: ["Offline", "Online"] },
+      { day: "Kamis", time: "13.00 - 15.00", type: ["Offline", "Online"] },
+    ],
   },
   {
     name: "Dilla Tria Febrina, M.Psi., Psikolog",
@@ -319,21 +273,23 @@ const teamData = [
     ],
   },
   {
-    name: "Ayu Laraswati Setianing Budi, M.Psi., Psikolog",
+    name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
     category: ["Psikolog Anak & Pendidikan"],
-    image: AyuLaraswati,
-    sipp: "0420-15-2-1",
+    image: RahmatikaSeptinaChairunnisa,
+    sipp: "20191429-2023-02-2109",
     specialties: [
-      "Masalah Remaja",
-      "Masalah Belajar",
-      "Minat & Bakat",
-      "Parenting",
+      "Perkembangan Anak",
+      "Pola Asuh",
+      "Parenting Stress",
+      "Kesiapan Sekolah",
     ],
     schedule: [
-      { day: "Sabtu", time: "10.00 - 16.00", type: ["Offline"] },
-      { day: "Minggu", time: "10.00 - 16.00", type: ["Offline"] },
-      { day: "By Appointment", time: "", type: ["Online"] },
+      {
+        day: "Rabu",
+        time: "13.00 - 15.00 (By Appointment)",
+        type: ["Offline"],
+      },
     ],
   },
   {
@@ -358,20 +314,82 @@ const teamData = [
     ],
   },
   {
-    name: "Farhan Zakariyya, S.Psi., M.Psi., Psikolog",
+    name: "Ayu Laraswati Setianing Budi, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
     category: ["Psikolog Anak & Pendidikan"],
-    image: FarhanZakariyya,
-    sipp: "20170643 - 2020 - 02 - 0502",
+    image: AyuLaraswati,
+    sipp: "0420-15-2-1",
     specialties: [
+      "Masalah Remaja",
       "Masalah Belajar",
       "Minat & Bakat",
-      "Kesehatan Mental",
-      "Relationship",
+      "Parenting",
     ],
     schedule: [
-      { day: "Rabu", time: "13.00 - 15.00", type: ["Offline", "Online"] },
-      { day: "Kamis", time: "13.00 - 15.00", type: ["Offline", "Online"] },
+      { day: "Sabtu", time: "10.00 - 16.00", type: ["Offline"] },
+      { day: "Minggu", time: "10.00 - 16.00", type: ["Offline"] },
+      { day: "By Appointment", time: "", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Aisyadiva Ilmiani, M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: AisyadivaIlmiani,
+    sipp: "20231335 - 2023 - 01 - 2220",
+    specialties: [
+      "Masalah Belajar",
+      "Karir",
+      "Kesiapan Sekolah",
+      "Relationship",
+    ],
+    schedule: [{ day: "Minggu", time: "09.00 - 12.00", type: ["Online"] }],
+  },
+  {
+    name: "Asmiani Fawziah, M.Psi., Psikolog",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: AsmianiFawziah,
+    sipp: "20191151 - 2019 - 01 - 0197",
+    specialties: [
+      "Relasi Sosial",
+      "Hubungan Keluarga",
+      "Self Development",
+      "Assessment Center",
+    ],
+    schedule: [
+      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
+    ],
+  },
+  {
+    name: "Tri Ayu Arimbi, M.Psi., Psikolog ",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: TriAyuArimbi,
+    sipp: "0420-15-2-1",
+    specialties: ["Rekrutmen", "Promosi", "Performance Appraisal"],
+    schedule: [
+      {
+        day: "Senin - Kamis",
+        time: "14.00 - 17.00",
+        type: ["Offline"],
+      },
+      {
+        day: "Jumat",
+        time: "13.00 - 16.00",
+        type: ["Offline"],
+      },
+    ],
+  },
+  {
+    name: "Amanda Putri Yuliardi, M.Psi., Psikolog",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: AmandaPutriYuliardi,
+    sipp: "20160647 - 2023 - 02 - 2404",
+    specialties: ["Asesmen & Feedback"],
+    schedule: [
+      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
     ],
   },
 ];
@@ -379,6 +397,7 @@ const teamData = [
 const Team = () => {
   const [activeTab, setActiveTab] = useState("Psikolog Dewasa");
   const [selectedMember, setSelectedMember] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -412,37 +431,99 @@ const Team = () => {
   };
 
   return (
-    <section id="tim" className="py-16 md:py-28 bg-[#fdfcf9]" ref={ref}>
+    <section id="tim" className="py-16 md:py-16 bg-[#fdfcf9]" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
+          <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-[0.2em]">
             Tim Kami
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-[#1D5158] mt-2 mb-4 leading-tight">
             Tim Profesional Kami
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-4">
+          <p className="text-muted-foreground max-w-5xl mx-auto text-sm md:text-base px-4">
             Bertemu dengan para psikolog bersertifikat kami yang berdedikasi
             untuk menemani perjalanan kesejahteraan Anda.
           </p>
         </div>
 
-        {/* Tab Filter */}
-        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-3 mb-12 overflow-x-auto pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {categories.map((cat) => (
+        {/* Tab Filter & Dropdown Mobile */}
+        <div className="relative mb-12 flex justify-center px-4">
+          {/* Mobile Dropdown Button */}
+          <div className="lg:hidden w-full max-w-xs relative">
             <button
-              key={cat.name}
-              onClick={() => setActiveTab(cat.name)}
-              className={`px-5 md:px-6 py-2 rounded-full border text-xs md:text-sm transition-all duration-300 whitespace-nowrap shrink-0 ${
-                activeTab === cat.name
-                  ? "bg-[#4a707a] text-white border-[#4a707a] shadow-md"
-                  : "bg-white text-gray-400 border-gray-200 hover:border-[#4a707a]/50"
-              }`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="w-full flex items-center justify-between px-5 py-3 bg-white border border-gray-200 rounded-xl shadow-sm text-[#1D5158] font-semibold text-sm transition-all active:scale-95"
             >
-              {cat.name}
+              <span>{activeTab}</span>
+              <svg
+                className={`w-5 h-5 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </button>
-          ))}
+
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <>
+                  {/* Overlay untuk menutup saat klik di luar */}
+                  <div
+                    className="fixed inset-0 z-10"
+                    onClick={() => setIsDropdownOpen(false)}
+                  />
+
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute z-20 w-full mt-2 bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden"
+                  >
+                    {categories.map((cat) => (
+                      <button
+                        key={cat.name}
+                        onClick={() => {
+                          setActiveTab(cat.name);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-5 py-4 text-sm transition-colors border-b border-gray-50 last:border-none ${
+                          activeTab === cat.name
+                            ? "bg-[#f8f6f2] text-[#4a707a] font-bold"
+                            : "text-gray-500 hover:bg-gray-50"
+                        }`}
+                      >
+                        {cat.name}
+                      </button>
+                    ))}
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Desktop Tab Filter (Sama seperti sebelumnya, disembunyikan di mobile) */}
+          <div className="hidden lg:flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat.name}
+                onClick={() => setActiveTab(cat.name)}
+                className={`px-6 py-2 rounded-full border text-sm transition-all duration-300 ${
+                  activeTab === cat.name
+                    ? "bg-[#4a707a] text-white border-[#4a707a] shadow-md"
+                    : "bg-white text-gray-400 border-gray-200 hover:border-[#4a707a]/50"
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Category Description */}
@@ -462,7 +543,7 @@ const Team = () => {
             <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">
               Daftar Psikolog
             </span>
-            <div className="h-[1px] w-full bg-gray-100"></div>
+            <div className="h-[1px] w-full bg-[#C6C8CE]"></div>
           </div>
         </motion.div>
 

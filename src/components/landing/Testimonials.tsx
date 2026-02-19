@@ -56,7 +56,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimoni" className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+    <section id="testimoni" className="py-16 md:py-24 lg:py-16 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
       {/* Decorative Blobs */}
       <div className="absolute top-10 md:top-20 left-0 md:left-10 w-24 md:w-32 h-24 md:h-32 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-10 md:bottom-20 right-0 md:right-10 w-32 md:w-40 h-32 md:h-40 bg-accent/5 rounded-full blur-3xl" />

@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import HeroBanner from "@/assets/hero-banner.webp";
 
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
-const WHATSAPP_URL = "https://wa.me/62881023348781"; // Replace with actual WhatsApp URL
+const WHATSAPP_URL = "https://wa.me/6287824820728"; // Replace with actual WhatsApp URL
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-finesse-cream pt-24">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-finesse-cream pt-20 pb-32">
       {/* Hero Image Full Width with Gradient Overlay */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="relative w-full h-full">
@@ -88,7 +88,7 @@ const Hero = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary/10 font-semibold px-8 py-6 text-lg"
+                className="border-primary text-primary hover:bg-primary/30 hover:text-primary font-semibold px-8 py-6 text-lg"
               >
                 <a href="#layanan">Lihat Layanan</a>
               </Button>
@@ -125,7 +125,7 @@ const Hero = () => {
       </div>
 
       {/* Wave divider */}
-      {/* <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -137,7 +137,7 @@ const Hero = () => {
             fill="hsl(var(--card))"
           />
         </svg>
-      </div> */}
+      </div>
     </section>
   );
 };

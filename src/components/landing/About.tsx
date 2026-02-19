@@ -22,7 +22,7 @@ const About = () => {
   return (
     <section
       id="mengapakami"
-      className="py-16 md:py-24 lg:py-32 bg-card relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-16 bg-card relative overflow-hidden"
     >
       {/* Super Graphic Background - Disesuaikan agar tidak menutupi teks di mobile */}
       <div className="absolute bottom-0 left-0 w-1/2 md:w-1/3 h-1/4 md:h-1/2 opacity-5 md:opacity-10 pointer-events-none">

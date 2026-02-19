@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import WhatsAppIcons from "@/assets/icons-whatsapp.svg";
 
-const GOOGLE_FORM_URL = "#";
+const GOOGLE_FORM_URL = "https://bit.ly/RegistrationForm-FinessePsyCare";
 const WHATSAPP_URL = "https://wa.me/62881023348781";
 
 const contactInfo = [
@@ -75,13 +75,13 @@ const Contact = () => {
             variants={fadeInUp}
             className="text-center mb-12 md:mb-16"
           >
-            <span className="text-teal-600 font-semibold text-xs md:text-sm uppercase tracking-widest">
+            <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-widest">
               HUBUNGI KAMI
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 md:mb-6 text-gray-900">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 md:mb-6 ">
               Mulai Perjalanan Anda
             </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto px-4">
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto px-4">
               Siap untuk memulai? Hubungi kami untuk konsultasi awal atau
               langsung isi formulir untuk menjadwalkan sesi Anda.
             </p>
@@ -91,7 +91,7 @@ const Contact = () => {
             {/* Left - Contact Info */}
             <motion.div variants={fadeInUp} className="flex flex-col gap-6">
               {/* Main CTA Card */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-gradient-to-br from-teal-700 to-teal-600 text-white rounded-3xl p-8 shadow-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-gradient-to-br from-[#1F555C] to-[#35676E] text-white rounded-3xl p-8 shadow-xl">
                 <div className="space-y-3">
                   <h3 className="font-heading text-2xl font-bold">
                     Jadwalkan Konsultasi
@@ -130,15 +130,15 @@ const Contact = () => {
                   >
                     <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-teal-50 transition-colors border border-gray-100">
                       <item.icon
-                        className="text-gray-600 group-hover:text-teal-600 transition-colors"
+                        className="text-heading group-hover:text-teal-600 transition-colors"
                         size={22}
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-0.5">
+                      <p className="text-[10px] uppercase tracking-wider text-heading font-bold mb-0.5">
                         {item.label}
                       </p>
-                      <p className="font-semibold text-gray-900 text-sm truncate">
+                      <p className="font-semibold text-sm truncate">
                         {item.value}
                       </p>
                     </div>
@@ -149,10 +149,10 @@ const Contact = () => {
               {/* Operational Hours */}
               <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm mt-auto">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-gray-900 rounded-lg">
-                    <Clock className="text-white" size={18} />
+                  <div className="p-2 rounded-lg">
+                    <Clock className="text-primary" size={18} />
                   </div>
-                  <h4 className="font-heading font-bold text-gray-900 text-lg">
+                  <h4 className="font-heading font-bold text-lg">
                     Jam Operasional
                   </h4>
                 </div>
@@ -162,10 +162,10 @@ const Contact = () => {
                       key={index}
                       className="flex justify-between items-center text-sm border-b border-gray-50 pb-3 last:border-0 last:pb-0"
                     >
-                      <span className="text-gray-500 font-medium">
+                      <span className="text-muted-foreground font-medium">
                         {item.day}
                       </span>
-                      <span className="font-bold text-gray-900">
+                      <span className="text-muted-foreground font-bold">
                         {item.hours}
                       </span>
                     </div>
@@ -190,9 +190,9 @@ const Contact = () => {
                   height="100%"
                   style={{
                     border: 0,
-                    minHeight: "400px", // Tinggi minimal di mobile diturunkan dari 545px ke 400px
+                    minHeight: "400px", 
                   }}
-                  className="w-full h-full lg:aspect-square xl:aspect-auto" // Menggunakan aspect ratio agar tetap proporsional
+                  className="w-full h-full lg:aspect-square xl:aspect-auto"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
