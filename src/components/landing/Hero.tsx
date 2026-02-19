@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import HeroBanner from "@/assets/hero-banner.webp";
 
 const GOOGLE_FORM_URL = "#"; // Replace with actual Google Form URL
-const WATSAPP_URL = "https://wa.me/62881023348781"; // Replace with actual WhatsApp URL
+const WHATSAPP_URL = "https://wa.me/62881023348781"; // Replace with actual WhatsApp URL
 
 const Hero = () => {
   return (
@@ -79,7 +79,7 @@ const Hero = () => {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg"
               >
-                <a href={WATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   Mulai Konsultasi
                   <ArrowRight className="ml-2" size={20} />
                 </a>
