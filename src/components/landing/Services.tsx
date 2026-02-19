@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 const GOOGLE_FORM_URL = "#"; 
+const WHATSAPP_URL = "https://wa.me/62881023348781";
 
 const services = [
   {
@@ -130,7 +131,7 @@ const Services = () => {
 
                   {/* CTA */}
                   <Button asChild variant="outline" className="w-full sm:w-fit border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn rounded-xl">
-                    <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                       Daftar Sekarang
                       <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={18} />
                     </a>
