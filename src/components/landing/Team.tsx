@@ -72,7 +72,7 @@ const teamData = [
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
     image: RifaViscarini,
-    sipp: "2023xxxx - 2023 - xxxx",
+    sipp: "20250540 - 2025 - 0990",
     specialties: [
       "Trauma",
       "Relationship",
@@ -97,7 +97,7 @@ const teamData = [
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
     image: DwiAyuElita,
-    sipp: "2023xxxx - 2023 - xxxx",
+    sipp: "20220664 - 2023 - 0772",
     specialties: ["Anxiety", "PTSD", "Quarter Life Crisis"],
     schedule: [
       { day: "Senin - Kamis", time: "19.00 - 21.00", type: ["Online"] },
@@ -128,7 +128,7 @@ const teamData = [
     role: "Psikolog Klinis Dewasa",
     category: ["Psikolog Dewasa"],
     image: DiahAyuPermatasari,
-    sipp: "20231329-2023-01-2209",
+    sipp: "20240269 - 2024 - 1357",
     specialties: [
       "Anxiety",
       "Trauma",
