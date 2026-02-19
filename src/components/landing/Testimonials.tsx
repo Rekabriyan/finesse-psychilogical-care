@@ -7,27 +7,33 @@ import { Button } from "@/components/ui/button";
 const testimonials = [
   {
     id: 1,
-    name: "Klien A.",
-    role: "Professional",
-    content: "Finesse membantu saya melewati masa-masa sulit dengan pendekatan yang hangat dan profesional. Saya merasa didengar dan dipahami sepanjang proses konseling.",
+    name: "S",
+    role: "Wiraswasta",
+    content: "Bagi saya yang baru melakukan konseling pertama kali, cukup menyenangkan, melegakan, banyak insight yang didapat, dan yang paling utama saya bisa diskusi mengenai keadaan yang saya alami dari sudut keilmuan psikologi.",
   },
   {
     id: 2,
-    name: "Klien B.",
-    role: "Mahasiswa",
-    content: "Asesmen karir di Finesse membuka wawasan baru tentang potensi diri saya. Sangat membantu dalam menentukan langkah karir ke depan.",
+    name: "D",
+    role: "Ibu Rumah Tangga",
+    content: "Terima kasih telah hadir dan menjadi tempat penyembuhan terbaik.",
   },
   {
     id: 3,
-    name: "Klien C.",
-    role: "Ibu Rumah Tangga",
-    content: "Program Persepsi Perempuan sangat memberdayakan. Saya menemukan komunitas yang suportif dan belajar banyak tentang self-care.",
+    name: "R",
+    role: "Pelajar/Mahasiswa",
+    content: "Terima kasih Finesse. Dari yang awalnya ragu, sekarang malah ngerasa ini keputusan yang tepat buat mulai konseling.",
   },
   {
     id: 4,
-    name: "HR Manager",
-    role: "Perusahaan",
-    content: "Kerjasama dengan Finesse dalam program employee wellness sangat berdampak positif. Karyawan kami lebih produktif dan bahagia.",
+    name: "P",
+    role: "Karyawan Swasta",
+    content: "Pengalaman pertama konseling ini sangat berkesan bagi saya. Saya merasa dipahami dan mulai mengerti apa yang sedang saya alami. Terima kasih, Finesse.",
+  },
+  {
+    id: 5,
+    name: "B",
+    role: "Karyawan Swasta",
+    content: "Setelah sesi konseling di Finesse, saya merasa lebih tenang dan tidak sendirian menghadapi keadaan saya. Penjelasan dari sudut pandang psikologi membantu saya untuk mengerti kondisi diri saya sendiri secara perlahan.",
   },
 ];
 

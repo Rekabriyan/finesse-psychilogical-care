@@ -14,22 +14,22 @@ const reasons = [
   {
     icon: GraduationCap,
     title: "Profesional Bersertifikat",
-    description: "Tim psikolog kami tersertifikasi dan berpengalaman dalam berbagai bidang psikologi klinis dan terapan.",
+    description: "Tim psikolog kami memiliki sertifikasi dan pengalaman di berbagai bidang psikologi untuk mendukung perjalanan Anda.",
   },
   {
     icon: Heart,
     title: "Pendekatan Holistik",
-    description: "Kami memandang setiap individu secara utuh — pikiran, perasaan, dan perilaku sebagai satu kesatuan.",
+    description: "Layanan kami dapat disesuaikan dengan kebutuhan dan tujuan Anda agar hasilnya lebih maksimal dan relevan.",
   },
   {
     icon: Shield,
     title: "Berbasis Riset",
-    description: "Setiap intervensi dan asesmen yang kami lakukan berdasarkan bukti ilmiah dan standar profesional.",
+    description: "Layanan kami dilakukan dengan menggunakan pendekatan yang sudah teruji dan mengikuti standar profesional psikologi.",
   },
   {
     icon: Lock,
     title: "Kerahasiaan Terjamin",
-    description: "Privasi dan kerahasiaan klien adalah prioritas utama kami sesuai dengan kode etik profesi.",
+    description: "Privasi Anda dijaga sepenuhnya sesuai kode etik profesi, sehingga Anda bisa merasa aman saat berbagi.",
   },
   {
     icon: Users,
@@ -38,8 +38,8 @@ const reasons = [
   },
   {
     icon: Clock,
-    title: "Fleksibel & Accessible",
-    description: "Tersedia berbagai pilihan jadwal dan format konsultasi untuk kenyamanan Anda.",
+    title: "Fleksibel & Sesuai Kebutuhan",
+    description: "Layanan kami dapat disesuaikan untuk individu, pasangan, keluarga, maupun organisasi, sehingga lebih praktis dan relevan.",
   },
 ];
 

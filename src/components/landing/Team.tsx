@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
+// Import Assets (Tetap sama)
 import MindyMaghfira from "/psikolog/mindy.svg";
 import RifaViscarini from "/psikolog/rifa.svg";
 import DwiAyuElita from "/psikolog/dwi-ayu.svg";
@@ -14,19 +15,33 @@ import GitaraniSofia from "/psikolog/gitarani-sofia.svg";
 import RahmatikaSeptinaChairunnisa from "/psikolog/rahmatika-septina.svg";
 import AmandaPutriYuliardi from "/psikolog/amanda-putri-yuliardi.svg";
 import TriAyuArimbi from "/psikolog/tri-ayu-arimbi.svg";
+import AsmianiFawziah from "/psikolog/asmiani-fawziah.svg";
+import AisyadivaIlmiani from "/psikolog/aisyadiva-ilmiani.svg";
+import DillaTriaFebrina from "/psikolog/dilla-tria-febrina.svg";
+import AyuLaraswati from "/psikolog/ayu-laraswati.svg";
+import AnggiRengganis from "/psikolog/anggi-rengganis.svg";
+import FarhanZakariyya from "/psikolog/farhan-zakariyya.svg";
 
 const categories = [
   {
     name: "Psikolog Dewasa",
-    description: "Memahami dan menangani masalah kesehatan mental individu dewasa melalui pemeriksaan psikologis, konseling, dan terapi.",
+    description:
+      "Memahami dan menangani masalah kesehatan mental individu dewasa melalui pemeriksaan psikologis, konseling, dan terapi.",
   },
   {
     name: "Psikolog Anak & Pendidikan",
-    description: "Membantu memahami dan menangani masalah mental, emosional, perilaku, dan tumbuh kembang serta potensi anak.",
+    description:
+      "Membantu memahami dan menangani masalah mental, emosional, perilaku, dan tumbuh kembang serta potensi anak.",
   },
   {
     name: "Psikolog Industri & Organisasi",
-    description: "Membantu perusahaan dalam memilih, mengembangkan dan menjaga kinerja karyawan agar lebih sehat dan produktif.",
+    description:
+      "Membantu perusahaan dalam manajemen SDM dan membantu individu agar sesuai dengan kompetensi organisasi.",
+  },
+  {
+    name: "Psikolog Klinis Dewasa & Anak",
+    description:
+      "Layanan psikologi klinis yang mencakup rentang usia anak hingga dewasa.",
   },
 ];
 
@@ -37,12 +52,20 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: MindyMaghfira,
     sipp: "20231327 - 2023 - 0777",
-    specialties: ["Anxiety", "Relationship", "Marriage and Family Conflict", "PTSD", "Stress", "Penerimaan Diri", "Stress dan Depresi", "Keluhan Mood dan Emosi"],
+    specialties: [
+      "Anxiety",
+      "Stress",
+      "Depresi",
+      "PTSD",
+      "Relationship",
+      "Regulasi Emosi",
+      "Self-Acceptance",
+    ],
     schedule: [
-      { day: "Selasa", time: "11.00 - 13.00", type: "Online" },
-      { day: "Rabu", time: "11.00 - 13.00", type: "Online" },
-      { day: "Jumat", time: "10.00 - 15.00", type: "Online" },
-    ]
+      { day: "Selasa", time: "11.00 - 13.00", type: ["Online"] },
+      { day: "Rabu", time: "11.00 - 13.00", type: ["Online"] },
+      { day: "Jumat", time: "10.00 - 15.00", type: ["Online"] },
+    ],
   },
   {
     name: "Rifa Viscarini, M.Psi., Psikolog.",
@@ -50,11 +73,24 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: RifaViscarini,
     sipp: "2023xxxx - 2023 - xxxx",
-    specialties: ["Self-Growth", "Anxiety", "Depresi"],
+    specialties: [
+      "Trauma",
+      "Relationship",
+      "Konseling Pra-nikah",
+      "Regulasi Emosi",
+    ],
     schedule: [
-      { day: "Setiap Hari", time: "09.00 - 15.00", type: "Online" },
-      { day: "Kamis", time: "09.00 - 15.00", type: "Offline" },
-    ]
+      {
+        day: "Kamis",
+        time: "09.00 - 15.00",
+        type: ["Offline"],
+      },
+      {
+        day: "Setiap Hari",
+        time: "09.00 - 15.00",
+        type: ["Online"],
+      },
+    ],
   },
   {
     name: "Dwi Ayu Elita Kartilia, M.Psi , Psikolog",
@@ -62,10 +98,11 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: DwiAyuElita,
     sipp: "2023xxxx - 2023 - xxxx",
-    specialties: ["Anxiety", "Relationship", "Quarter Life Crisis"],
+    specialties: ["Anxiety", "PTSD", "Quarter Life Crisis"],
     schedule: [
-      { day: "Senin - Kamis", time: "19.00 - 21.00", type: "Online" },
-      { day: "Sabtu", time: "10.00 - 15.00", type: "Online" },]
+      { day: "Senin - Kamis", time: "19.00 - 21.00", type: ["Online"] },
+      { day: "Sabtu", time: "10.00 - 15.00", type: ["Online"] },
+    ],
   },
   {
     name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
@@ -73,10 +110,18 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: AstridNurAlfaradais,
     sipp: "20231329-2023-01-2209",
-    specialties: ["Anxiety", "Stress", "Depresi", "Gangguan Kepribadian", "Gangguan Mood", "Relationship", "Self Development"],
+    specialties: [
+      "Anxiety",
+      "Stress",
+      "Depresi",
+      "Gangguan Kepribadian",
+      "Relationship",
+      "Self Development",
+    ],
     schedule: [
-      { day: "Kamis", time: "09.00 - 11.00", type: "Offline" },
-      { day: "Jumat", time: "16.00 - 18.00", type: "Online" },]
+      { day: "Kamis", time: "09.00 - 11.00", type: ["Offline"] },
+      { day: "Jumat", time: "16.00 - 18.00", type: ["Online"] },
+    ],
   },
   {
     name: "Diah Ayu Permatasari, M.Psi., Psikolog",
@@ -84,9 +129,14 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: DiahAyuPermatasari,
     sipp: "20231329-2023-01-2209",
-    specialties: ["Anxiety", "Trauma", "Relasi Sosial", "Masalah Mood dan Emosi", "Masalah pada Primary Support Group", "Self Harm"],
-    schedule: [
-      { day: "By Appointment", time: "", type: "Online" }]
+    specialties: [
+      "Anxiety",
+      "Trauma",
+      "Relationship",
+      "Regulasi Emosi",
+      "Self-Harm",
+    ],
+    schedule: [{ day: "By Appointment", time: "", type: ["Online"] }],
   },
   {
     name: "Astri Firdasannah, M.Psi., Psikolog",
@@ -94,9 +144,17 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: AstriFirdasannah,
     sipp: "20180763-2022-01-2127",
-    specialties: ["Anxiety", "OCD", "Panic Attack", "Depresi", "Quarter Life Crisis", "Toxic Relationship", "Permasalahan Remaja dan Keluarga", "Toxic Parenting"],
+    specialties: [
+      "Anxiety",
+      "OCD",
+      "Depresi",
+      "Quarter Life Crisis",
+      "Relationship",
+      "Parenting",
+    ],
     schedule: [
-      { day: "Selasa", time: "16.00 - 20.00", type: "Online Offline" }]
+      { day: "Selasa", time: "16.00 - 20.00", type: ["Online", "Offline"] },
+    ],
   },
   {
     name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
@@ -104,22 +162,28 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: TekstidinegariThaufik,
     sipp: "20180809-2024-1359",
-    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    specialties: [
+      "Kecemasan",
+      "Depresi",
+      "Trauma",
+      "Psikosomatis Akibat Stress",
+      "Relationship",
+    ],
     schedule: [
-      { day: "Kamis", time: "09.00 - 14.00", type: "Offline" },
-      { day: "Sabtu", time: "14.00 - 17.00", type: "Offline" },
-    ]
+      { day: "Kamis", time: "09.00 - 14.00", type: ["Offline"] },
+      { day: "Sabtu", time: "14.00 - 17.00", type: ["Offline"] },
+    ],
   },
   {
     name: "Norhafizha Rinanda, S.Psi., M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa", "Psikolog Anak & Pendidikan"],
+    role: "Psikolog Klinis Dewasa & Anak",
+    category: ["Psikolog Klinis Dewasa & Anak"],
     image: NorhafizhaRinanda,
     sipp: "503/002/SIPPK-DisPMPTSP/HSS/VI/2022",
-    specialties: ["Anxiety", "PTSD", "Relationship", "Penanganan KOrban Kekerasan", "Masalah Akademik", "+ Lainnya"],
+    specialties: ["Anxiety", "PTSD", "Relationship", "Masalah Akademik"],
     schedule: [
-      { day: "Senin - Kamis", time: "18.00 - 20.00 (sesuai perjanjian)", type: "Online" },
-    ]
+      { day: "Senin - Kamis", time: "18.00 - 20.00", type: ["Online"] },
+    ],
   },
   {
     name: "Gitarani Sofia, M.Psi., Psikolog.",
@@ -127,34 +191,65 @@ const teamData = [
     category: ["Psikolog Dewasa"],
     image: GitaraniSofia,
     sipp: "20250539-2025-01-1632",
-    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    specialties: ["Relationship", "Penyesuaian Diri", "Kecemasan", "Stress"],
     schedule: [
-      { day: "Senin", time: "09.00 - 15.00", type: "Online" },
-      { day: "Kamis", time: "09.00 - 15.00", type: "Offline" },
-      { day: "Jumat", time: "09.00 - 14.00", type: "Online" },
-    ]
+      {
+        day: "Kamis",
+        time: "09.00 - 15.00",
+        type: ["Offline"],
+      },
+      {
+        day: "Jumat",
+        time: "09.00 - 15.00",
+        type: ["Offline"],
+      },
+      {
+        day: "Senin",
+        time: "09.00 - 16.00",
+        type: ["Online"],
+      },
+      {
+        day: "Kamis",
+        time: "09.00 - 16.00",
+        type: ["Online"],
+      },
+      {
+        day: "Jumat",
+        time: "09.00 - 16.00",
+        type: ["Online"],
+      },
+    ],
   },
   {
     name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog",
-    role: "Psikolog Klinis Dewasa",
+    role: "Psikolog Klinis Anak & Pendidikan",
     category: ["Psikolog Anak & Pendidikan"],
     image: RahmatikaSeptinaChairunnisa,
     sipp: "20191429-2023-02-2109",
-    specialties: ["Perkembangan Anak", "Pola Asuh", "Parenting Stress", "Tes Kesiapan Sekolah", "Kecerdasan", "Regulasi Emosi & Kecemasan", "Skrining Tumbuh Kembang"],
+    specialties: [
+      "Perkembangan Anak",
+      "Pola Asuh",
+      "Parenting Stress",
+      "Kesiapan Sekolah",
+    ],
     schedule: [
-      { day: "Rabu", time: "13.00 - 15.00 (By Appointment)", type: "Offline" },
-    ]
+      {
+        day: "Rabu",
+        time: "13.00 - 15.00 (By Appointment)",
+        type: ["Offline"],
+      },
+    ],
   },
   {
     name: "Amanda Putri Yuliardi, M. Psi., Psikolog",
     role: "Psikolog Industri & Organisasi",
     category: ["Psikolog Industri & Organisasi"],
     image: AmandaPutriYuliardi,
-    sipp: "20160647-2023-02-2404",
-    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    sipp: "20160647 - 2023 - 02 - 2404",
+    specialties: ["Asesmen & Feedback"],
     schedule: [
-      { day: "By Appointment", type: "Online" },
-    ]
+      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
+    ],
   },
   {
     name: "Tri Ayu Arimbi., M. Psi., Psikolog.",
@@ -162,13 +257,123 @@ const teamData = [
     category: ["Psikolog Industri & Organisasi"],
     image: TriAyuArimbi,
     sipp: "0420-15-2-1",
-    specialties: ["Kecemasan", "Depresi", "Trauma", "Psikosomatis Akibat Stress", "Self-Harm/NSSI", "+ Masalah Regulasi Emosi", "Quarter Life Crisis dan Loneliness", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah", "Kehilangan/menurunnya motivasi", "Masalah Relasi Sosial", "Konseling Pranikah"],
+    specialties: ["Rekrutmen", "Promosi", "Performance Appraisal"],
     schedule: [
-      { day: "Senin - Kamis", time: "14.00 - 17.00", type: "Online" },
-      { day: "Jumat", time: "13.00 - 16.00", type: "Online" },
-    ]
+      {
+        day: "Senin - Kamis",
+        time: "14.00 - 17.00",
+        type: ["Offline"],
+      },
+      {
+        day: "Jumat",
+        time: "13.00 - 16.00",
+        type: ["Offline"],
+      },
+    ],
   },
-
+  {
+    name: "Asmiani Fawziah, M.Psi., Psikolog",
+    role: "Psikolog Industri & Organisasi",
+    category: ["Psikolog Industri & Organisasi"],
+    image: AsmianiFawziah,
+    sipp: "",
+    specialties: [
+      "Relasi Sosial",
+      "Hubungan Keluarga",
+      "Self Development",
+      "Assessment Center",
+    ],
+    schedule: [
+      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
+    ],
+  },
+  {
+    name: "Aisyadiva Ilmiani, M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: AisyadivaIlmiani,
+    sipp: "20231335 - 2023 - 01 - 2220",
+    specialties: [
+      "Masalah Belajar",
+      "Karir",
+      "Kesiapan Sekolah",
+      "Relationship",
+    ],
+    schedule: [{ day: "Minggu", time: "09.00 - 12.00", type: ["Online"] }],
+  },
+  {
+    name: "Dilla Tria Febrina, M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: DillaTriaFebrina,
+    sipp: "20180812 – 2021 – 02 – 0387",
+    specialties: [
+      "Kesiapan Sekolah",
+      "Minat & Bakat",
+      "Masalah Belajar",
+      "Parenting",
+    ],
+    schedule: [
+      { day: "By Appointment", time: "", type: ["Offline", "Online"] },
+      { day: "Jumat", time: "13.00 - 16.00", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Ayu Laraswati Setianing Budi, M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: AyuLaraswati,
+    sipp: "0420-15-2-1",
+    specialties: [
+      "Masalah Remaja",
+      "Masalah Belajar",
+      "Minat & Bakat",
+      "Parenting",
+    ],
+    schedule: [
+      { day: "Sabtu", time: "10.00 - 16.00", type: ["Offline"] },
+      { day: "Minggu", time: "10.00 - 16.00", type: ["Offline"] },
+      { day: "By Appointment", time: "", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Anggi Rengganis, M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: AnggiRengganis,
+    sipp: "20181107 - 2021 - 01 - 0117",
+    specialties: [
+      "Perkembangan Anak",
+      "School Refusal",
+      "ABK",
+      "Masalah Emosi Remaja",
+    ],
+    schedule: [
+      { day: "Selasa", time: "08.00 - 12.00", type: ["Offline"] },
+      { day: "Rabu", time: "08.00 - 12.00", type: ["Offline"] },
+      { day: "Kamis", time: "08.00 - 12.00", type: ["Offline"] },
+      { day: "Selasa", time: "09.00 - 16.00", type: ["Online"] },
+      { day: "Rabu", time: "09.00 - 16.00", type: ["Online"] },
+      { day: "Kamis", time: "09.00 - 16.00", type: ["Online"] },
+    ],
+  },
+  {
+    name: "Farhan Zakariyya, S.Psi., M.Psi., Psikolog",
+    role: "Psikolog Klinis Anak & Pendidikan",
+    category: ["Psikolog Anak & Pendidikan"],
+    image: FarhanZakariyya,
+    sipp: "20170643 - 2020 - 02 - 0502",
+    specialties: [
+      "Masalah Belajar",
+      "Minat & Bakat",
+      "Kesehatan Mental",
+      "Relationship",
+    ],
+    schedule: [
+      { day: "Rabu", time: "13.00 - 15.00", type: ["Offline", "Online"] },
+      { day: "Kamis", time: "13.00 - 15.00", type: ["Offline", "Online"] },
+    ],
+  },
 ];
 
 const Team = () => {
@@ -178,7 +383,7 @@ const Team = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    const handleEscKey = (e) => (e.key === "Escape" && setSelectedMember(null));
+    const handleEscKey = (e) => e.key === "Escape" && setSelectedMember(null);
     if (selectedMember) {
       document.body.style.overflow = "hidden";
       document.addEventListener("keydown", handleEscKey);
@@ -190,7 +395,11 @@ const Team = () => {
   }, [selectedMember]);
 
   const activeCategoryDetail = categories.find((cat) => cat.name === activeTab);
-  const filteredTeam = teamData.filter((member) => member.category.includes(activeTab));
+
+  // PERBAIKAN: Logika filter karena teamData sekarang flat array
+  const filteredTeam = teamData.filter((member) =>
+    member.category.includes(activeTab),
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -205,19 +414,22 @@ const Team = () => {
   return (
     <section id="tim" className="py-16 md:py-28 bg-[#fdfcf9]" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
-        
-        {/* Section Header */}
+        {/* Header Section */}
         <div className="text-center mb-10 md:mb-16">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">Tim Kami</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1D5158] mt-2 mb-4 leading-tight">Tim Profesional Kami</h2>
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
+            Tim Kami
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1D5158] mt-2 mb-4 leading-tight">
+            Tim Profesional Kami
+          </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base px-4">
-            Bertemu dengan para psikolog bersertifikat kami yang berdedikasi untuk menemani perjalanan kesejahteraan Anda.
+            Bertemu dengan para psikolog bersertifikat kami yang berdedikasi
+            untuk menemani perjalanan kesejahteraan Anda.
           </p>
         </div>
 
-        {/* --- TAB FILTER UPDATE: HIDE SCROLLBAR --- */}
-        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-3 mb-12 overflow-x-auto pb-4 md:pb-0 
-          [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* Tab Filter */}
+        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-3 mb-12 overflow-x-auto pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {categories.map((cat) => (
             <button
               key={cat.name}
@@ -233,12 +445,23 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Category Detail Section */}
-        <motion.div key={`header-${activeTab}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-10">
-          <h3 className="text-xl md:text-2xl font-bold text-[#1e3a47] mb-2">{activeCategoryDetail?.name}</h3>
-          <p className="text-gray-400 text-xs md:text-sm max-w-4xl leading-relaxed">{activeCategoryDetail?.description}</p>
+        {/* Category Description */}
+        <motion.div
+          key={`header-${activeTab}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="mb-10"
+        >
+          <h3 className="text-xl md:text-2xl font-bold text-[#1e3a47] mb-2">
+            {activeCategoryDetail?.name}
+          </h3>
+          <p className="text-gray-400 text-xs md:text-sm max-w-6xl leading-relaxed">
+            {activeCategoryDetail?.description}
+          </p>
           <div className="flex items-center gap-4 mt-6">
-            <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">Daftar Psikolog</span>
+            <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest whitespace-nowrap">
+              Daftar Psikolog
+            </span>
             <div className="h-[1px] w-full bg-gray-100"></div>
           </div>
         </motion.div>
@@ -249,7 +472,7 @@ const Team = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         >
           {filteredTeam.map((member, index) => (
             <motion.div
@@ -258,7 +481,7 @@ const Team = () => {
               onClick={() => setSelectedMember(member)}
               className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
             >
-              <div className="aspect-[4/5] sm:aspect-[5/4] bg-gradient-to-b from-orange-50 to-white relative overflow-hidden shrink-0">
+              <div className="aspect-[4/5] sm:aspect-[5/4] bg-[#f8f6f2] relative overflow-hidden shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -269,14 +492,16 @@ const Team = () => {
                 <h4 className="font-heading text-sm md:text-lg font-bold text-[#1D5158] leading-tight mb-1 md:mb-2 line-clamp-2 md:min-h-[44px]">
                   {member.name}
                 </h4>
-                <p className="text-[10px] md:text-sm text-gray-400 font-medium">{member.role}</p>
+                <p className="text-[10px] md:text-sm text-gray-400 font-medium">
+                  {member.role}
+                </p>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* --- MODAL DETAIL (Tetap Sama) --- */}
+      {/* Modal Detail */}
       <AnimatePresence>
         {selectedMember && (
           <div className="fixed inset-0 z-[999] flex items-center justify-center p-0 sm:p-6">
@@ -294,66 +519,121 @@ const Team = () => {
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
               className="relative bg-white w-full h-full sm:h-auto sm:max-w-4xl md:max-w-5xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[100vh] sm:max-h-[90vh]"
             >
-              <button 
+              {/* Close Button */}
+              <button
                 onClick={() => setSelectedMember(null)}
-                className="absolute top-4 right-4 z-20 p-2.5 bg-white/80 hover:bg-white rounded-full transition-all text-gray-800 shadow-lg md:top-6 md:right-6"
+                className="absolute top-4 right-4 z-20 p-2 bg-white/80 hover:bg-white rounded-full transition-all text-gray-800 shadow-lg"
               >
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
 
-              <div className="w-full md:w-[40%] lg:w-[45%] bg-[#f8f6f2] flex items-end justify-center relative overflow-hidden shrink-0 h-[40vh] md:h-auto">
-                <div className="absolute top-10 right-10 w-32 h-32 bg-[#4a707a]/10 rounded-full blur-3xl"></div>
-                <img 
-                  src={selectedMember.image} 
-                  alt={selectedMember.name} 
-                  className="w-full h-full object-cover object-top filter contrast-[1.02] scale-110"
+              {/* Modal Left: Image */}
+              <div className="w-full md:w-[40%] lg:w-[45%] bg-[#f8f6f2] flex items-end justify-center relative overflow-hidden shrink-0 h-[35vh] md:h-auto">
+                <img
+                  src={selectedMember.image}
+                  alt={selectedMember.name}
+                  className="w-full h-full object-cover object-top scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden" />
               </div>
 
+              {/* Modal Right: Content */}
               <div className="w-full md:w-[60%] lg:w-[55%] flex flex-col bg-white overflow-hidden">
                 <div className="px-6 md:px-10 pt-6 md:pt-10 pb-4 border-b border-gray-50">
-                  <h3 className="text-xl md:text-3xl font-bold text-[#1e3a47] mb-2 leading-tight">{selectedMember.name}</h3>
-                  <p className="text-[#a67c52] font-bold text-sm md:text-base uppercase tracking-wider">{selectedMember.role}</p>
+                  <h3 className="text-xl md:text-3xl font-bold text-[#1e3a47] mb-1 leading-tight">
+                    {selectedMember.name}
+                  </h3>
+                  <p className="text-[#a67c52] font-bold text-xs md:text-sm uppercase tracking-wider">
+                    {selectedMember.role}
+                  </p>
+                  <p className="text-gray-400 text-[10px] mt-1 italic">
+                    SIPP: {selectedMember.sipp}
+                  </p>
                 </div>
 
                 <div className="flex-1 overflow-y-auto px-6 md:px-10 py-6 space-y-8">
+                  {/* Specialties */}
                   <section>
-                    <h4 className="text-[10px] md:text-xs font-bold text-gray-400 mb-4 uppercase tracking-[0.2em]">Spesialisasi Kasus</h4>
+                    <h4 className="text-[10px] font-bold text-gray-400 mb-3 uppercase tracking-widest">
+                      Spesialisasi
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedMember.specialties?.map((spec, i) => (
-                        <span key={i} className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-50 text-[#4a707a] rounded-lg text-[10px] md:text-xs font-semibold border border-gray-100">
+                        <span
+                          key={i}
+                          className="px-3 py-1.5 bg-gray-50 text-[#4a707a] rounded-lg text-[10px] md:text-xs font-semibold border border-gray-100"
+                        >
                           {spec}
                         </span>
                       ))}
                     </div>
                   </section>
 
+                  {/* Schedule */}
                   <section>
-                    <h4 className="text-[10px] md:text-xs font-bold text-gray-400 mb-4 uppercase tracking-[0.2em]">Jadwal Praktik</h4>
-                    <div className="grid gap-3">
+                    <h4 className="text-[10px] font-bold text-gray-400 mb-3 uppercase tracking-widest">
+                      Jadwal Praktik
+                    </h4>
+                    <div className="grid gap-2.5">
                       {selectedMember.schedule?.map((item, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 md:p-4 bg-[#fcfcfc] rounded-2xl border border-gray-50 transition-all hover:border-[#4a707a]/20">
+                        <div
+                          key={i}
+                          className="flex items-center justify-between p-3 bg-[#fcfcfc] rounded-xl border border-gray-50 transition-all hover:border-[#4a707a]/20"
+                        >
                           <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
-                            <span className="text-gray-800 font-bold text-xs md:text-sm">{item.day}</span>
-                            {item.time && <span className="text-gray-500 text-[11px] md:text-xs">{item.time}</span>}
+                            <span className="text-gray-800 font-bold text-xs">
+                              {item.day}
+                            </span>
+                            <span className="text-gray-500 text-[10px] md:text-xs">
+                              {item.time}
+                            </span>
                           </div>
-                          <span className="px-3 py-1 bg-[#e8f5f0] text-[#54b18d] rounded-full text-[9px] md:text-[10px] font-bold uppercase">
-                            {item.type}
-                          </span>
+                          <div className="flex gap-1.5">
+                            {item.type.map((t, idx) => (
+                              <span
+                                key={idx}
+                                className={`px-2 py-0.5 rounded-full text-[8px] font-extrabold uppercase tracking-tighter ${
+                                  t.toLowerCase() === "online"
+                                    ? "bg-[#e8f5f0] text-[#54b18d]"
+                                    : "bg-[#e0f2fe] text-[#0284c7]"
+                                }`}
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </section>
                 </div>
 
+                {/* Footer Action */}
                 <div className="p-6 md:p-10 pt-4 border-t border-gray-50">
-                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all transform active:scale-[0.98] shadow-lg shadow-[#4a707a]/20 flex items-center justify-center gap-3">
+                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all flex items-center justify-center gap-3">
                     Konsultasi Sekarang
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                       <path d="M5 12h14M12 5l7 7-7 7" />
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
