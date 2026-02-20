@@ -704,19 +704,26 @@ const Team = () => {
 
                 {/* Footer Action */}
                 <div className="p-6 md:p-10 pt-4 border-t border-gray-50">
-                  <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all flex items-center justify-center gap-3">
-                    Konsultasi Sekarang
-                    <svg
-                      width="18"
-                      height="18"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </button>
+                  <a
+                    href="https://wa.me/6287824820728?text=Halo,%20saya%20ingin%20konsultasi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full py-4 bg-[#4a707a] text-white rounded-2xl font-bold hover:bg-[#3d5d66] transition-all flex items-center justify-center gap-3">
+                      Konsultasi Sekarang
+                      <svg
+                        width="18"
+                        height="18"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

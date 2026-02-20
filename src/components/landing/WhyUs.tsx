@@ -74,7 +74,7 @@ const WhyUs = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">
               Keunggulan Finesse
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">

@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <section
       id="kontak"
-      className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-16" ref={ref}>
         <motion.div
