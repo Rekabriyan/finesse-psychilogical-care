@@ -25,12 +25,12 @@ import NoviAdelina from "/psikolog/novi-adelina.svg";
 
 const categories = [
   {
-    name: "Psikolog Dewasa",
+    name: "Psikolog Klinis Dewasa",
     description:
       "Memahami dan menangani masalah kesehatan mental individu dewasa melalui pemeriksaan psikologis, konseling, dan terapi.",
   },
   {
-    name: "Psikolog Anak & Pendidikan",
+    name: "Psikolog Klinis Anak & Pendidikan",
     description:
       "Membantu memahami dan menangani masalah mental, emosional, perilaku, dan tumbuh kembang serta potensi anak.",
   },
@@ -45,7 +45,7 @@ const teamData = [
   {
     name: "Novi Adelina, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: NoviAdelina,
     sipp: "20240268 - 2024 - 1358",
     specialties: [
@@ -67,7 +67,7 @@ const teamData = [
   {
     name: "Dwi Ayu Elita Kartilia, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: DwiAyuElita,
     sipp: "20220664 - 2023 - 0772",
     specialties: ["Anxiety", "PTSD", "Quarter Life Crisis"],
@@ -79,7 +79,7 @@ const teamData = [
   {
     name: "Tekstidinegari Thaufik, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: TekstidinegariThaufik,
     sipp: "20180809-2024-1359",
     specialties: [
@@ -97,7 +97,7 @@ const teamData = [
   {
     name: "Astri Firdasannah, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog KlinisDewasa"],
     image: AstriFirdasannah,
     sipp: "20180763-2022-01-2127",
     specialties: [
@@ -115,7 +115,7 @@ const teamData = [
   {
     name: "Diah Ayu Permatasari, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: DiahAyuPermatasari,
     sipp: "20240269 - 2024 - 1357",
     specialties: [
@@ -130,7 +130,7 @@ const teamData = [
   {
     name: "Mindy Maghfira, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: MindyMaghfira,
     sipp: "20231327 - 2023 - 0777",
     specialties: [
@@ -151,7 +151,7 @@ const teamData = [
   {
     name: "Astrid Nur Alfaradais, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: AstridNurAlfaradais,
     sipp: "20231329-2023-01-2209",
     specialties: [
@@ -206,7 +206,7 @@ const teamData = [
   {
     name: "Gitarani Sofia, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: GitaraniSofia,
     sipp: "20250539-2025-01-1632",
     specialties: ["Relationship", "Penyesuaian Diri", "Kecemasan", "Stress"],
@@ -241,7 +241,7 @@ const teamData = [
   {
     name: "Farhan Zakariyya, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: FarhanZakariyya,
     sipp: "20170643 - 2020 - 02 - 0502",
     specialties: [
@@ -258,7 +258,7 @@ const teamData = [
   {
     name: "Dilla Tria Febrina, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: DillaTriaFebrina,
     sipp: "20180812 – 2021 – 02 – 0387",
     specialties: [
@@ -275,7 +275,7 @@ const teamData = [
   {
     name: "Rahmatika Septina Chairunnisa, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: RahmatikaSeptinaChairunnisa,
     sipp: "20191429-2023-02-2109",
     specialties: [
@@ -295,7 +295,7 @@ const teamData = [
   {
     name: "Anggi Rengganis, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: AnggiRengganis,
     sipp: "20181107 - 2021 - 01 - 0117",
     specialties: [
@@ -316,7 +316,7 @@ const teamData = [
   {
     name: "Ayu Laraswati Setianing Budi, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: AyuLaraswati,
     sipp: "0420-15-2-1",
     specialties: [
@@ -334,7 +334,7 @@ const teamData = [
   {
     name: "Aisyadiva Ilmiani, M.Psi., Psikolog",
     role: "Psikolog Klinis Anak & Pendidikan",
-    category: ["Psikolog Anak & Pendidikan"],
+    category: ["Psikolog Klinis Anak & Pendidikan"],
     image: AisyadivaIlmiani,
     sipp: "20231335 - 2023 - 01 - 2220",
     specialties: [
@@ -395,7 +395,7 @@ const teamData = [
 ];
 
 const Team = () => {
-  const [activeTab, setActiveTab] = useState("Psikolog Dewasa");
+  const [activeTab, setActiveTab] = useState("Psikolog Klinis Dewasa");
   const [selectedMember, setSelectedMember] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const ref = useRef(null);
@@ -417,7 +417,7 @@ const Team = () => {
 
   // PERBAIKAN: Logika filter karena teamData sekarang flat array
   const filteredTeam = teamData.filter((member) =>
-    member.category.includes(activeTab),
+    member.category.some(cat => cat === activeTab),
   );
 
   const containerVariants = {
