@@ -97,7 +97,7 @@ const teamData = [
   {
     name: "Astri Firdasannah, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog KlinisDewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: AstriFirdasannah,
     sipp: "20180763-2022-01-2127",
     specialties: [
@@ -170,7 +170,7 @@ const teamData = [
   {
     name: "Norhafizha Rinanda, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: NorhafizhaRinanda,
     sipp: "503/002/SIPPK-DisPMPTSP/HSS/VI/2022",
     specialties: ["Anxiety", "PTSD", "Relationship", "Masalah Akademik"],
@@ -181,7 +181,7 @@ const teamData = [
   {
     name: "Rifa Viscarini, M.Psi., Psikolog",
     role: "Psikolog Klinis Dewasa",
-    category: ["Psikolog Dewasa"],
+    category: ["Psikolog Klinis Dewasa"],
     image: RifaViscarini,
     sipp: "20250540 - 2025 - 0990",
     specialties: [
