@@ -1,4 +1,5 @@
 import { Heart, Instagram, Mail, Phone } from "lucide-react";
+import LogoSecondary from "@/assets/logo-finesse-putih.svg";
 
 const footerLinks = {
   layanan: [
@@ -32,7 +33,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src={"src/assets/logo-finesse-putih.svg"}
+              src={LogoSecondary}
               alt="Finesse Psychological Care"
               className="h-12 w-auto mb-2"
             />
