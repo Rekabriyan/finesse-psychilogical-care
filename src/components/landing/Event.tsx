@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Banner from "@/assets/event-banner.webp";
 
-const WHATSAPP_URL = "https://wa.me/6287824820728";
+// const WHATSAPP_URL = "https://wa.me/6287824820728";
 const Instagram_URL = "https://www.instagram.com/finesse.psy";
 
 const EventsBanner = () => {
@@ -67,7 +67,7 @@ const EventsBanner = () => {
             >
               <Button className="relative bg-primary hover:bg- text-white px-8 py-6 rounded-xl text-md flex items-center gap-2 transition-all group w-full md:w-auto justify-center overflow-hidden">
                 <a
-                  href={WHATSAPP_URL}
+                  href={Instagram_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute inset-0 flex items-center justify-center"
