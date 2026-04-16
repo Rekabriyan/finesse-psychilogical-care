@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 const GOOGLE_FORM_URL = "#"; 
-const WHATSAPP_URL = "https://wa.me/62881023348781";
+const WHATSAPP_URL = "https://wa.me/6287824820728";
 
 const services = [
   {

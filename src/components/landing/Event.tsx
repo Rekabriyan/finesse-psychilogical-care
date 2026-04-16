@@ -5,7 +5,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Banner from "@/assets/event-banner.webp";
 
-const WHATSAPP_URL = "https://wa.me/62881023348781";
+const WHATSAPP_URL = "https://wa.me/6287824820728";
+const Instagram_URL = "https://www.instagram.com/finesse.psy";
 
 const EventsBanner = () => {
   const ref = useRef(null);
