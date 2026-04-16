@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import WhatsAppIcons from "@/assets/icons-whatsapp.svg";
 
 const GOOGLE_FORM_URL = "https://bit.ly/RegistrationForm-FinessePsyCare";
-const WHATSAPP_URL = "https://wa.me/62881023348781";
+const WHATSAPP_URL = "https://wa.me/6287824820728";
 
 const contactInfo = [
   {
