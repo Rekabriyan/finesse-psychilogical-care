@@ -7,6 +7,7 @@ import {
   Building2,
   Users,
   Stethoscope,
+  HeartPulse,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -46,6 +47,22 @@ const services = [
     description: "Program khusus untuk pemberdayaan perempuan dalam memahami dan mengembangkan potensi diri secara holistik.",
     features: ["Healing Academy", "Sharing Session", "Support Group", "Empowerment Workshop"],
     color: "accent",
+  },
+  {
+    id: 5,
+    icon: HeartPulse,
+    title: "Mental Health Check Up",
+    description: "Kenali kondisi psikologis, kesejahteraan, kualitas tidur, dan karakteristik kepribadian Anda melalui rangkaian asesmen Finesse.",
+    features: [
+      "SRQ-20 – Mental Health Screening",
+      "PERMA – Psychological Wellbeing",
+      "Sleep Quality – Sleep Quality Assessment",
+      "MBTI – Personality Exploration",
+    ],
+    color: "primary",
+    url: "https://finessepsy.github.io/",
+    ctaLabel: "Mulai Check Up",
+    wide: true,
   },
 ];
 
@@ -98,7 +115,11 @@ const Services = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
             {services.map((service) => (
-              <motion.div key={service.id} variants={itemVariants} className="group">
+              <motion.div
+                key={service.id}
+                variants={itemVariants}
+                className={`group ${service.wide ? "md:col-span-2" : ""}`}
+              >
                 <div className="bg-card rounded-[2rem] p-7 md:p-10 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl h-full flex flex-col">
                   {/* Icon */}
                   <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 shrink-0 ${
@@ -131,8 +152,8 @@ const Services = () => {
 
                   {/* CTA */}
                   <Button asChild variant="outline" className="w-full sm:w-fit border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn rounded-xl">
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                      Daftar Sekarang
+                    <a href={service.url ?? WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      {service.ctaLabel ?? "Daftar Sekarang"}
                       <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={18} />
                     </a>
                   </Button>
