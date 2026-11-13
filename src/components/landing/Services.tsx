@@ -61,7 +61,7 @@ const services = [
     ],
     color: "primary",
     url: "https://finessepsy.github.io/",
-    ctaLabel: "Mulai Check Up",
+    ctaLabel: " Mulai Tes Sekarang",
     wide: true,
   },
 ];
